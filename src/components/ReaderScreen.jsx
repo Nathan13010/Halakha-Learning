@@ -274,12 +274,12 @@ const ReaderScreen = ({
       </section>
 
       <main className="flex-grow flex flex-col items-center justify-start py-6 px-4 md:px-6 relative">
-        <div className="w-full max-w-2xl bg-zinc-900/40 border border-zinc-850 rounded-2xl p-6 md:p-8 space-y-6 flex flex-col relative min-h-[350px]">
-          <div className="absolute top-4 left-4 flex items-center gap-1.5 text-zinc-500 select-none">
+        <div className="w-full max-w-2xl space-y-6 flex flex-col relative min-h-[350px] pt-8 px-2 md:px-0">
+          <div className="absolute top-0 left-2 md:left-0 flex items-center gap-1.5 text-zinc-500 select-none">
             <div className="w-1.5 h-1.5 bg-amber-500/50 rounded-full" />
             <span className="text-[8px] tracking-widest font-mono uppercase font-bold text-zinc-500">Hilkhot Chabbat</span>
           </div>
-          <div className="absolute top-4 right-4 text-[9px] font-mono font-bold text-amber-500/80 uppercase tracking-widest">
+          <div className="absolute top-0 right-2 md:right-0 text-[9px] font-mono font-bold text-amber-500/80 uppercase tracking-widest">
             Seïf {currentParagraphIndex + 1}
           </div>
 
@@ -396,7 +396,7 @@ const ReaderScreen = ({
                 <div className="space-y-8 pb-6">
                   <div className="space-y-2">
                     <span className="text-[9px] font-bold text-zinc-500 uppercase tracking-widest block text-right select-none">Hébreu (עִבְרִית)</span>
-                    <div className="font-hebrew-serif leading-relaxed text-right tracking-wide bg-zinc-950/40 p-5 rounded-xl border border-zinc-800" dir="rtl" style={{ fontSize: `${fontSize + 2}px` }}>
+                    <div className="font-hebrew-serif leading-relaxed text-right tracking-wide pb-2" dir="rtl" style={{ fontSize: `${fontSize + 2}px` }}>
                       {currentParagraph.mots_alignes.map((word, idx) => {
                         const wordId = `m3-heb-${word.id}-${idx}`;
                         const isHovered = hoveredWordId === word.id;
@@ -419,7 +419,7 @@ const ReaderScreen = ({
 
                   <div className="space-y-2">
                     <span className="text-[9px] font-bold text-zinc-500 uppercase tracking-widest block select-none">Français (Mot-à-Mot)</span>
-                    <div className="leading-relaxed tracking-normal font-sans bg-zinc-950/40 p-5 rounded-xl border border-zinc-800" style={{ fontSize: `${fontSize - 2}px` }}>
+                    <div className="leading-relaxed tracking-normal font-sans pb-2" style={{ fontSize: `${fontSize - 2}px` }}>
                       {currentParagraph.mots_alignes.map((word, idx) => {
                         const wordId = `m3-fr-${word.id}-${idx}`;
                         const isHovered = hoveredWordId === word.id;
@@ -475,7 +475,7 @@ const ReaderScreen = ({
                 <div className="h-[1px] flex-1 bg-gradient-to-l from-transparent to-zinc-500"></div>
               </div>
 
-              <div className="pt-5 mt-5 bg-zinc-950/30 p-5 rounded-xl border border-zinc-800">
+              <div className="pt-5 mt-5 border-t border-zinc-800/80">
                 <div className="flex items-center gap-1.5 mb-2.5 text-zinc-500">
                   <Icon name="info" className="w-3.5 h-3.5 text-amber-500/80" />
                   <span className="text-[10px] font-bold uppercase tracking-widest">Traduction Intégrale Fluide</span>

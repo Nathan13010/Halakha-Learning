@@ -494,5 +494,214 @@
         "expression_contexte": "7]"
       }
     ]
+  },
+  {
+    "livre": "Yalkout Yossef",
+    "sujet": "Hilkhot Chabbat",
+    "siman": "318",
+    "seif": "2",
+    "texte_integral": {
+      "hebreu_sans_voyelles": "ב. המבשל בשבת במזיד לצורך עצמו אף שהתבשיל נאסר עליו לעולם, עם כל זה מותר לו למכור את התבשיל לאחרים, ואין צריך לנכות דמי הבישול במכירה, שאין מעשה שבת באופן כזה אסורים בהנאה. [ילקוט יוסף שבת כרך ג' עמוד ט\"ו, ובמהדורת תשס\"ד גם עמוד תמ\"ג. שארית יוסף חלק ג' עמוד תכ\"א. שו\"ת יביע אומר חלק י' בהערות לרב פעלים חלק ג' סימן י\"ז].",
+      "hebreu_avec_voyelles": "ב. הַמְבַשֵּׁל בְּשַׁבָּת בְּמֵזִיד לְצוֹרֶךְ עַצְמוֹ אַף שֶׁהַתַּבְשִׁיל נֶאֱסַר עָלָיו לְעוֹלָם, עִם כָּל זֶה מוּתָּר לוֹ לִמְכּוֹר אֶת הַתַּבְשִׁיל לַאֲחֵרִים, וְאֵין צָרִיךְ לְנַכּוֹת דְּמֵי הַבִּישּׁוּל בַּמְּכִירָה, שֶׁאֵין מַעֲשֵׂה שַׁבָּת בְּאוֹפֶן כָּזֶה אֲסוּרִים בַּהֲנָאָה. [יַלְקוּט יוֹסֵף שַׁבָּת כֶּרֶךְ ג' עַמּוּד ט\"ו, וּבְמַהֲדוּרַת תְּשׁס\"ד גַּם עַמּוּד תמ\"ג. שְׁאֵרִית יוֹסֵף חֵלֶק ג' עַמּוּד תכ\"א. שׁוּ\"ת יַבִּיעַ אוֹמֶר חֵלֶק י' בְּהֶעָרוֹת לְרַב פְּעָלִים חֵלֶק ג' סִימָן י\"ז].",
+      "francais": "B. Celui qui cuisine pendant Chabbat de manière intentionnelle (Bémezid) pour ses propres besoins, bien que le plat lui soit interdit à tout jamais, il lui est néanmoins permis de vendre ce plat à d'autres personnes. Il n'est pas nécessaire de déduire la valeur ajoutée par la cuisson lors de la vente, car le profit tiré d'une action accomplie pendant Chabbat (Maassé Chabbat) n'est pas interdit de cette manière. [Yalkout Yossef Chabbat vol. 3, page 15, et dans l'édition de 5764 également page 443. Chéérit Yossef vol. 3 page 421. Responsa Yabia Omer vol. 10 dans les notes sur le Rav Péalim vol. 3 chapitre 17]."
+    },
+    "mots_alignes": [
+      {
+        "id": 1,
+        "hebreu_brut": "ב",
+        "hebreu_voyelles": "ב.",
+        "francais_mot": "B",
+        "expression_contexte": "B"
+      },
+      {
+        "id": 2,
+        "hebreu_brut": "המבשל",
+        "hebreu_voyelles": "הַמְבַשֵּׁל",
+        "francais_mot": "Celui qui cuisine",
+        "expression_contexte": "Celui qui cuisine"
+      },
+      {
+        "id": 3,
+        "hebreu_brut": "בשבת",
+        "hebreu_voyelles": "בְּשַׁבָּת",
+        "francais_mot": "pendant Chabbat",
+        "expression_contexte": "pendant Chabbat"
+      },
+      {
+        "id": 4,
+        "hebreu_brut": "במזיד",
+        "hebreu_voyelles": "בְּמֵזִיד",
+        "francais_mot": "intentionnellement",
+        "expression_contexte": "de manière intentionnelle (Bémezid)"
+      },
+      {
+        "id": 5,
+        "hebreu_brut": "לצורך",
+        "hebreu_voyelles": "לְצוֹרֶךְ",
+        "francais_mot": "pour le besoin de",
+        "expression_contexte": "pour ses besoins"
+      },
+      {
+        "id": 6,
+        "hebreu_brut": "עצמו",
+        "hebreu_voyelles": "עַצְמוֹ",
+        "francais_mot": "lui-même",
+        "expression_contexte": "propres"
+      },
+      {
+        "id": 7,
+        "hebreu_brut": "אף",
+        "hebreu_voyelles": "אַף",
+        "francais_mot": "même / bien que",
+        "expression_contexte": "bien que"
+      },
+      {
+        "id": 8,
+        "hebreu_brut": "שהתבשיל",
+        "hebreu_voyelles": "שֶׁהַתַּבְשִׁיל",
+        "francais_mot": "que le plat",
+        "expression_contexte": "le plat"
+      },
+      {
+        "id": 9,
+        "hebreu_brut": "נאסר",
+        "hebreu_voyelles": "נֶאֱסַר",
+        "francais_mot": "a été interdit",
+        "expression_contexte": "soit interdit"
+      },
+      {
+        "id": 10,
+        "hebreu_brut": "עליו",
+        "hebreu_voyelles": "עָלָיו",
+        "francais_mot": "sur lui",
+        "expression_contexte": "lui"
+      },
+      {
+        "id": 11,
+        "hebreu_brut": "לעולם",
+        "hebreu_voyelles": "לְעוֹלָם",
+        "francais_mot": "à jamais",
+        "expression_contexte": "à tout jamais"
+      },
+      {
+        "id": 12,
+        "hebreu_brut": "עם כל זה",
+        "hebreu_voyelles": "עִם כָּל זֶה",
+        "francais_mot": "malgré tout cela",
+        "expression_contexte": "il lui est néanmoins"
+      },
+      {
+        "id": 13,
+        "hebreu_brut": "מותר",
+        "hebreu_voyelles": "מוּתָּר",
+        "francais_mot": "permis",
+        "expression_contexte": "permis"
+      },
+      {
+        "id": 14,
+        "hebreu_brut": "לו",
+        "hebreu_voyelles": "לוֹ",
+        "francais_mot": "à lui",
+        "expression_contexte": "de"
+      },
+      {
+        "id": 15,
+        "hebreu_brut": "למכור",
+        "hebreu_voyelles": "לִמְכּוֹר",
+        "francais_mot": "vendre",
+        "expression_contexte": "vendre"
+      },
+      {
+        "id": 16,
+        "hebreu_brut": "את",
+        "hebreu_voyelles": "אֶת",
+        "francais_mot": "(particule d'accusatif)",
+        "expression_contexte": "(non traduit)"
+      },
+      {
+        "id": 17,
+        "hebreu_brut": "התבשיל",
+        "hebreu_voyelles": "הַתַּבְשִׁיל",
+        "francais_mot": "le plat",
+        "expression_contexte": "ce plat"
+      },
+      {
+        "id": 18,
+        "hebreu_brut": "לאחרים",
+        "hebreu_voyelles": "לַאֲחֵרִים",
+        "francais_mot": "à d'autres",
+        "expression_contexte": "à d'autres personnes"
+      },
+      {
+        "id": 19,
+        "hebreu_brut": "ואין צריך",
+        "hebreu_voyelles": "וְאֵין צָרִיךְ",
+        "francais_mot": "et il n'y a pas besoin",
+        "expression_contexte": "Il n'est pas nécessaire"
+      },
+      {
+        "id": 20,
+        "hebreu_brut": "לנכות",
+        "hebreu_voyelles": "לְנַכּוֹת",
+        "francais_mot": "déduire",
+        "expression_contexte": "de déduire"
+      },
+      {
+        "id": 21,
+        "hebreu_brut": "דמי",
+        "hebreu_voyelles": "דְּמֵי",
+        "francais_mot": "le prix de / la valeur de",
+        "expression_contexte": "la valeur ajoutée par"
+      },
+      {
+        "id": 22,
+        "hebreu_brut": "הבישול",
+        "hebreu_voyelles": "הַבִּישּׁוּל",
+        "francais_mot": "la cuisson",
+        "expression_contexte": "la cuisson"
+      },
+      {
+        "id": 23,
+        "hebreu_brut": "במכירה",
+        "hebreu_voyelles": "בַּמְּכִירָה",
+        "francais_mot": "dans la vente",
+        "expression_contexte": "lors de la vente"
+      },
+      {
+        "id": 24,
+        "hebreu_brut": "שאין",
+        "hebreu_voyelles": "שֶׁאֵין",
+        "francais_mot": "car il n'y a pas",
+        "expression_contexte": "car... n'est pas"
+      },
+      {
+        "id": 25,
+        "hebreu_brut": "מעשה שבת",
+        "hebreu_voyelles": "מַעֲשֵׂה שַׁבָּת",
+        "francais_mot": "l'action du Chabbat",
+        "expression_contexte": "le profit tiré d'une action accomplie pendant Chabbat (Maassé Chabbat)"
+      },
+      {
+        "id": 26,
+        "hebreu_brut": "באופן כזה",
+        "hebreu_voyelles": "בְּאוֹפֶן כָּזֶה",
+        "francais_mot": "de cette manière",
+        "expression_contexte": "de cette manière"
+      },
+      {
+        "id": 27,
+        "hebreu_brut": "אסורים",
+        "hebreu_voyelles": "אֲסוּרִים",
+        "francais_mot": "interdits",
+        "expression_contexte": "interdit"
+      },
+      {
+        "id": 28,
+        "hebreu_brut": "בהנאה",
+        "hebreu_voyelles": "בַּהֲנָאָה",
+        "francais_mot": "en profit / d'en tirer profit",
+        "expression_contexte": "de tirer profit"
+      }
+    ]
   }
 ]

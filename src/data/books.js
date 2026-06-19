@@ -60,7 +60,6 @@ export const BOOKS = [
     description: "Lois fondamentales concernant les règles de cuisson pendant le Chabbat. Édition bilingue interactive.",
     coverColor: "bg-gradient-to-br from-blue-900 via-indigo-950 to-slate-900",
     isUnlocked: true,
-    dataUrl: "https://raw.githubusercontent.com/Nathan13010/yalkout-yossef-data/main/%D7%A1%D7%99%D7%9E%D7%9F%20%D7%A9%D7%99_%D7%97%20(siman%20318).json",
     chapters: [{ id: "siman-318", title: "Siman 318" }]
   },
   {

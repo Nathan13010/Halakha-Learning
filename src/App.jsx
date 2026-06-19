@@ -44,32 +44,16 @@ function App() {
   };
 
   const handleLoadBook = async (book, startIdx = 0, isAuto = false) => {
-    if (!book.dataUrl) return;
+    if (!book.isUnlocked) return;
     setIsLoading(true);
     setErrorMessage(null);
     setActiveBookId(book.id);
 
     try {
-      let response;
-      // 1. Try to load local copy first for extreme speed & offline robustness
-      try {
-        response = await fetch(`/data/${book.id}.json`);
-      } catch (e) {
-        console.warn("Local data load failed, trying remote...", e);
-      }
-
-      // 2. Try proxy or direct remote fetch if local fails
-      if (!response || !response.ok) {
-        try {
-          const proxyUrl = `/api/book-data?url=${encodeURIComponent(book.dataUrl)}`;
-          response = await fetch(proxyUrl);
-        } catch (e) {
-          response = await fetch(book.dataUrl);
-        }
-      }
-
-      if (!response || !response.ok) {
-        throw new Error(`Erreur réseau : ${response ? response.status : 'Serveur injoignable'}`);
+      const response = await fetch(`/data/${book.id}.json`);
+      
+      if (!response.ok) {
+        throw new Error(`Erreur de chargement local : ${response.status}`);
       }
 
       const rawData = await response.json();
