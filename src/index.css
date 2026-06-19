@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Optimisations typographiques fines pour le texte sacré */
+.font-hebrew-serif {
+  font-family: 'Noto Serif Hebrew', serif;
+  font-size: 1.15em;
+  line-height: 1.8;
+}
+
+/* Custom scrollbar pour l'aspect vieux manuscrit moderne micro-stylisé */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0A0B;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272A;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D97706;
+}
