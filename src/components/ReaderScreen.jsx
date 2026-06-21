@@ -18,6 +18,7 @@ const ReaderScreen = ({
   const [popup, setPopup] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [showSearchResults, setShowSearchResults] = useState(false);
+  const [showCommentaires, setShowCommentaires] = useState(false);
 
   const containerRef = useRef(null);
   const wordRefs = useRef({});
@@ -29,6 +30,7 @@ const ReaderScreen = ({
 
   useEffect(() => {
     setPopup(null);
+    setShowCommentaires(false);
   }, [currentParagraphIndex, readingMode]);
 
   useEffect(() => {
@@ -44,27 +46,149 @@ const ReaderScreen = ({
     return () => document.removeEventListener("mousedown", handleOutsideClick);
   }, [popup]);
 
+  // Handle word selection with instant state reset to fix iOS Safari/Chrome sticky bug
   const handleWordClick = (word, wordId) => {
-    const wordElement = wordRefs.current[wordId];
-    if (!wordElement || !containerRef.current) return;
+    // 1. Clear old state to force unmounting of the popup component
+    setPopup(null);
 
-    const containerRect = containerRef.current.getBoundingClientRect();
-    const wordRect = wordElement.getBoundingClientRect();
+    // 2. Re-mount in next tick to ensure smooth, instant update on touch events
+    setTimeout(() => {
+      const wordElement = wordRefs.current[wordId];
+      if (!wordElement || !containerRef.current) return;
 
-    let left = wordRect.left - containerRect.left + wordRect.width / 2;
-    const top = wordRect.top - containerRect.top - 8;
+      const containerRect = containerRef.current.getBoundingClientRect();
+      const wordRect = wordElement.getBoundingClientRect();
 
-    const popupWidth = Math.min(320, containerRect.width * 0.90);
-    const halfWidth = popupWidth / 2;
-    const margin = 12;
+      let left = wordRect.left - containerRect.left + wordRect.width / 2;
+      const top = wordRect.top - containerRect.top - 8;
 
-    left = Math.max(halfWidth + margin, Math.min(left, containerRect.width - halfWidth - margin));
+      const popupWidth = Math.min(320, containerRect.width * 0.90);
+      const halfWidth = popupWidth / 2;
+      const margin = 12;
 
-    setPopup({
-      word,
-      left,
-      top,
-      show: true,
+      left = Math.max(halfWidth + margin, Math.min(left, containerRect.width - halfWidth - margin));
+
+      setPopup({
+        word,
+        left,
+        top,
+        show: true,
+      });
+    }, 10);
+  };
+
+  // Helper to split sentence into prefix punctuation, clean word, and suffix punctuation
+  const parseToken = (token) => {
+    const match = token.match(/^([^\w\u00C0-\u00FF]*)([\w\u00C0-\u00FF'-]+)([^\w\u00C0-\u00FF]*)$/);
+    if (match) {
+      return {
+        prefix: match[1],
+        word: match[2],
+        suffix: match[3]
+      };
+    }
+    return {
+      prefix: "",
+      word: token,
+      suffix: ""
+    };
+  };
+
+  // Pre-calculate the sequential mapping from French tokens to mots_alignes items
+  const cleanStr = (str) => {
+    return (str || "").toLowerCase()
+      .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()\[\]"']/g, "")
+      .split(/\s+/)
+      .filter(Boolean);
+  };
+
+  const fluentFrenchMapping = React.useMemo(() => {
+    if (!currentParagraph || !currentParagraph.texte_integral.francais) return [];
+    
+    const tokens = currentParagraph.texte_integral.francais.split(/\s+/);
+    const mots = currentParagraph.mots_alignes || [];
+    const mapping = new Array(tokens.length).fill(null);
+    
+    const cleanMots = mots.map(m => {
+      const words = new Set([
+        ...cleanStr(m.francais_mot),
+        ...cleanStr(m.expression_contexte)
+      ]);
+      return { mot: m, words };
+    });
+    
+    let lastM = 0;
+    
+    for (let i = 0; i < tokens.length; i++) {
+      const cleanToken = tokens[i].toLowerCase().replace(/[.,\/#!$%\^&\*;:{}=\-_`~()\[\]"']/g, "");
+      if (!cleanToken) continue;
+      
+      const candidates = [];
+      cleanMots.forEach((cm, mIndex) => {
+        let match = false;
+        cm.words.forEach(w => {
+          if (w === cleanToken || w.includes(cleanToken) || cleanToken.includes(w)) {
+            match = true;
+          }
+        });
+        if (match) {
+          candidates.push({ index: mIndex, mot: cm.mot });
+        }
+      });
+      
+      if (candidates.length > 0) {
+        // Pick the candidate closest to the last matched index
+        candidates.sort((a, b) => Math.abs(a.index - lastM) - Math.abs(b.index - lastM));
+        mapping[i] = candidates[0].mot;
+        lastM = candidates[0].index;
+      }
+    }
+    
+    return mapping;
+  }, [currentParagraph]);
+
+  // Render fluent French text as cliquable words mapped to Hebrew
+  const renderFluentFrenchText = (modePrefix) => {
+    if (!currentParagraph || !currentParagraph.texte_integral.francais) return null;
+
+    return currentParagraph.texte_integral.francais.split(/\s+/).map((token, idx) => {
+      const { prefix, word, suffix } = parseToken(token);
+      const wordId = `${modePrefix}-fluent-${idx}`;
+      
+      const matchedWord = fluentFrenchMapping[idx];
+      const isHovered = matchedWord && hoveredWordId === matchedWord.id;
+      const isPopupSelected = popup && popup.show && popup.word && matchedWord && popup.word.id === matchedWord.id;
+
+      const handlePointerDown = (e) => {
+        e.preventDefault();
+        const wordObj = matchedWord || {
+          id: `fluent-${word.toLowerCase().replace(/[^\w]/g, "")}-${idx}`,
+          hebreu_voyelles: "—",
+          francais_mot: word,
+          expression_contexte: "Ce terme fait partie de la traduction fluide globale."
+        };
+        handleWordClick(wordObj, wordId);
+      };
+
+      return (
+        <React.Fragment key={wordId}>
+          {prefix}
+          <span
+            ref={el => { if (el) wordRefs.current[wordId] = el; }}
+            onMouseEnter={() => matchedWord && setHoveredWordId(matchedWord.id)}
+            onMouseLeave={() => setHoveredWordId(null)}
+            onPointerDown={handlePointerDown}
+            className={`clickable-word inline-block px-0.5 rounded cursor-pointer transition-colors border-b-2 ${
+              isHovered || isPopupSelected 
+                ? 'text-amber-500 bg-amber-500/10 border-amber-500' 
+                : 'text-zinc-200 hover:bg-amber-500/10 border-transparent'
+            }`}
+          >
+            {word}
+          </span>
+          {suffix}{' '}
+        </React.Fragment>
+      );
     });
   };
 
@@ -201,7 +325,7 @@ const ReaderScreen = ({
                     }}
                     className={`w-full text-left p-2 rounded text-xs transition-all flex items-start gap-2.5 ${res.index === currentParagraphIndex ? "bg-amber-500/10 border border-amber-500/30 text-amber-200" : "bg-zinc-900 border border-zinc-800 hover:bg-zinc-800"}`}
                   >
-                    <span className="font-mono bg-zinc-800 text-zinc-400 px-1.5 py-0.5 rounded text-[10px] font-bold">Seïf {res.index + 1}</span>
+                    <span className="font-mono bg-zinc-800 text-zinc-400 px-1.5 py-0.5 rounded text-[10px] font-bold">Seïf {res.paragraph.seif || (res.index + 1)}</span>
                     <div className="flex-grow min-w-0">
                       <p className="font-serif text-[11px] truncate text-right text-zinc-400 mb-0.5" dir="rtl">{res.paragraph.texte_integral.hebreu_sans_voyelles}</p>
                       <p className="italic text-[10px] text-zinc-500 truncate">{res.paragraph.texte_integral.francais}</p>
@@ -218,7 +342,7 @@ const ReaderScreen = ({
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row lg:items-center justify-between gap-4">
           <div className="flex flex-wrap items-center gap-6">
             <div className="flex items-center gap-3">
-              <label className="text-[10px] uppercase tracking-widest text-zinc-500 font-bold">Chapitre</label>
+              <label className="text-[10px] uppercase tracking-widest text-zinc-550 font-bold">Chapitre</label>
               <select className="bg-zinc-800 border border-zinc-700 rounded px-2.5 py-1 text-xs font-semibold text-zinc-350 focus:outline-none">
                 <option>Siman 318</option>
               </select>
@@ -230,8 +354,8 @@ const ReaderScreen = ({
                 onChange={(e) => onParagraphChange(Number(e.target.value))}
                 className="bg-zinc-800 border border-zinc-700 rounded px-2.5 py-1 text-xs font-semibold text-zinc-300 focus:outline-none focus:border-amber-500/50 cursor-pointer"
               >
-                {paragraphs.map((_, idx) => (
-                  <option key={idx} value={idx}>Seïf {idx + 1}</option>
+                {paragraphs.map((para, idx) => (
+                  <option key={idx} value={idx}>Seïf {para.seif || (idx + 1)}</option>
                 ))}
               </select>
             </div>
@@ -280,7 +404,7 @@ const ReaderScreen = ({
             <span className="text-[8px] tracking-widest font-mono uppercase font-bold text-zinc-500">Hilkhot Chabbat</span>
           </div>
           <div className="absolute top-0 right-2 md:right-0 text-[9px] font-mono font-bold text-amber-500/80 uppercase tracking-widest">
-            Seïf {currentParagraphIndex + 1}
+            Seïf {currentParagraph?.seif || (currentParagraphIndex + 1)}
           </div>
 
           {!currentParagraph ? (
@@ -302,7 +426,7 @@ const ReaderScreen = ({
                   }}
                   className="z-40 w-[95%] max-w-[320px] md:w-80 popup-container"
                 >
-                  <div className="bg-zinc-800 border border-amber-500 shadow-2xl rounded-xl p-4 overflow-hidden relative mb-3">
+                  <div className="bg-zinc-800 border border-amber-500 shadow-2xl rounded-xl p-4 relative mb-3">
                     <div className="flex justify-between items-start pb-2 mb-2.5 border-b border-zinc-700">
                       <div className="text-left select-none">
                         <span className="bg-amber-500 text-black text-[9px] font-bold px-1.5 py-0.5 rounded tracking-wider uppercase">
@@ -360,7 +484,7 @@ const ReaderScreen = ({
                         ref={el => { if (el) wordRefs.current[wordId] = el; }}
                         onMouseEnter={() => setHoveredWordId(word.id)}
                         onMouseLeave={() => setHoveredWordId(null)}
-                        onClick={() => handleWordClick(word, wordId)}
+                        onPointerDown={() => handleWordClick(word, wordId)}
                         className={`clickable-word inline-block px-1.5 py-0.5 mx-0.5 rounded cursor-pointer transition-colors border-b-2 ${isHovered ? 'text-amber-500 bg-amber-500/10 border-amber-500' : isKeyMatched ? 'bg-amber-500/20 text-yellow-200 border-amber-500/50' : 'text-zinc-100 hover:bg-amber-500/10 border-transparent'}`}
                       >
                         {word.hebreu_brut}
@@ -382,7 +506,7 @@ const ReaderScreen = ({
                         ref={el => { if (el) wordRefs.current[wordId] = el; }}
                         onMouseEnter={() => setHoveredWordId(word.id)}
                         onMouseLeave={() => setHoveredWordId(null)}
-                        onClick={() => handleWordClick(word, wordId)}
+                        onPointerDown={() => handleWordClick(word, wordId)}
                         className={`clickable-word inline-block px-1.5 py-0.5 mx-0.5 rounded cursor-pointer transition-colors border-b-2 ${isHovered ? 'text-amber-500 bg-amber-500/10 border-amber-500' : isKeyMatched ? 'bg-amber-500/20 text-yellow-200 border-amber-500/50' : 'text-zinc-100 hover:bg-amber-500/10 border-transparent'}`}
                       >
                         {word.hebreu_voyelles}
@@ -407,7 +531,7 @@ const ReaderScreen = ({
                             ref={el => { if (el) wordRefs.current[wordId] = el; }}
                             onMouseEnter={() => setHoveredWordId(word.id)}
                             onMouseLeave={() => setHoveredWordId(null)}
-                            onClick={() => handleWordClick(word, wordId)}
+                            onPointerDown={() => handleWordClick(word, wordId)}
                             className={`clickable-word inline-block px-1.5 py-0.5 mx-0.5 rounded cursor-pointer transition-colors border-b-2 ${isHovered ? 'text-amber-500 bg-amber-500/10 border-amber-500' : isKeyMatched ? 'bg-amber-500/20 text-yellow-200 border-amber-500/50' : 'text-zinc-100 hover:bg-amber-500/10 border-transparent'}`}
                           >
                             {word.hebreu_voyelles}
@@ -418,72 +542,93 @@ const ReaderScreen = ({
                   </div>
 
                   <div className="space-y-2">
-                    <span className="text-[9px] font-bold text-zinc-500 uppercase tracking-widest block select-none">Français (Mot-à-Mot)</span>
+                    <span className="text-[9px] font-bold text-zinc-500 uppercase tracking-widest block select-none">Français (Traduction Fluide)</span>
                     <div className="leading-relaxed tracking-normal font-sans pb-2" style={{ fontSize: `${fontSize - 2}px` }}>
-                      {currentParagraph.mots_alignes.map((word, idx) => {
-                        const wordId = `m3-fr-${word.id}-${idx}`;
-                        const isHovered = hoveredWordId === word.id;
-                        const isKeyMatched = searchQuery.trim() && word.francais_mot.toLowerCase().includes(searchQuery.toLowerCase().trim());
-                        return (
-                          <span
-                            key={wordId}
-                            ref={el => { if (el) wordRefs.current[wordId] = el; }}
-                            onMouseEnter={() => setHoveredWordId(word.id)}
-                            onMouseLeave={() => setHoveredWordId(null)}
-                            onClick={() => handleWordClick(word, wordId)}
-                            className={`clickable-word inline-block px-1 py-0.5 mx-0.5 rounded cursor-pointer transition-colors border-b-2 ${isHovered ? 'text-amber-500 bg-amber-500/10 border-amber-500' : isKeyMatched ? 'bg-amber-500/20 text-yellow-200 border-amber-500/50' : 'text-zinc-200 hover:bg-amber-500/10 border-transparent'}`}
-                          >
-                            {word.francais_mot}
-                          </span>
-                        );
-                      })}
+                      {renderFluentFrenchText('m3-fr')}
                     </div>
                   </div>
                 </div>
               )}
 
               {readingMode === 4 && (
-                <div className="leading-relaxed tracking-normal font-sans pb-6 text-zinc-200 space-y-4 shadow-inner" style={{ fontSize: `${fontSize - 1}px` }}>
+                <div className="leading-relaxed tracking-normal font-sans pb-6 text-zinc-200 space-y-4" style={{ fontSize: `${fontSize - 1}px` }}>
                   <p className="font-serif italic text-zinc-500 border-l-2 border-amber-500/40 pl-3 py-1 mb-4 text-xs md:text-sm select-none">
-                    Surlignez un mot ci-dessous pour examiner sa forme hébraïque correspondante avec ses voyelles grammaticales (Nikoud).
+                    Touchez un mot ci-dessous pour examiner sa forme hébraïque correspondante avec ses voyelles grammaticales (Nikoud).
                   </p>
                   <div>
-                    {currentParagraph.mots_alignes.map((word, idx) => {
-                      const wordId = `m4-${word.id}-${idx}`;
-                      const isHovered = hoveredWordId === word.id;
-                      const isKeyMatched = searchQuery.trim() && word.francais_mot.toLowerCase().includes(searchQuery.toLowerCase().trim());
-                      return (
-                        <span
-                          key={wordId}
-                          ref={el => { if (el) wordRefs.current[wordId] = el; }}
-                          onMouseEnter={() => setHoveredWordId(word.id)}
-                          onMouseLeave={() => setHoveredWordId(null)}
-                          onClick={() => handleWordClick(word, wordId)}
-                          className={`clickable-word inline-block px-1 py-0.5 mx-0.5 rounded cursor-pointer transition-colors border-b-2 ${isHovered ? 'text-amber-500 bg-amber-500/10 border-amber-500' : isKeyMatched ? 'bg-amber-500/20 text-yellow-200 border-amber-500/50' : 'text-zinc-200 hover:bg-amber-500/10 border-transparent'}`}
-                        >
-                          {word.francais_mot}
-                        </span>
-                      );
-                    })}
+                    {renderFluentFrenchText('m4')}
                   </div>
                 </div>
               )}
 
-              <div className="flex items-center justify-center gap-4 py-4 opacity-30 select-none">
-                <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent to-zinc-500"></div>
-                <div className="w-2 h-2 rounded-full bg-amber-500/50"></div>
-                <div className="h-[1px] flex-1 bg-gradient-to-l from-transparent to-zinc-500"></div>
-              </div>
+              {/* RÉSUMÉ PÉDAGOGIQUE */}
+              {currentParagraph.resume_pedagogique && (readingMode === 3 || readingMode === 4) && (
+                <div className="pt-6 mt-6 border-t border-zinc-800/80 space-y-4">
+                  <div className="flex items-center gap-1.5 text-zinc-400 mb-2">
+                    <Icon name="cap" className="w-4 h-4 text-amber-500" />
+                    <span className="text-[10px] font-bold uppercase tracking-widest">Résumé Pédagogique</span>
+                  </div>
+                  
+                  {currentParagraph.resume_pedagogique.sens_general && (
+                    <div className="border-l-4 border-amber-500 bg-amber-500/5 p-4 rounded-r-xl">
+                      <h4 className="text-xs font-bold text-amber-400 mb-1 font-serif">Sens Général</h4>
+                      <p className="text-xs text-zinc-300 leading-relaxed font-sans">{currentParagraph.resume_pedagogique.sens_general}</p>
+                    </div>
+                  )}
 
-              <div className="pt-5 mt-5 border-t border-zinc-800/80">
-                <div className="flex items-center gap-1.5 mb-2.5 text-zinc-500">
-                  <Icon name="info" className="w-3.5 h-3.5 text-amber-500/80" />
-                  <span className="text-[10px] font-bold uppercase tracking-widest">Traduction Intégrale Fluide</span>
+                  {currentParagraph.resume_pedagogique.cas_concret && (
+                    <div className="border-l-4 border-blue-500 bg-blue-500/5 p-4 rounded-r-xl">
+                      <h4 className="text-xs font-bold text-blue-400 mb-1 font-serif">Cas Concret</h4>
+                      <p className="text-xs text-zinc-300 leading-relaxed font-sans">
+                        {currentParagraph.resume_pedagogique.cas_concret}
+                      </p>
+                    </div>
+                  )}
+
+                  {currentParagraph.resume_pedagogique.en_pratique && (
+                    <div className="border-l-4 border-emerald-500 bg-emerald-500/5 p-4 rounded-r-xl">
+                      <h4 className="text-xs font-bold text-emerald-400 mb-1 font-serif">En Pratique</h4>
+                      <p className="text-xs text-zinc-300 leading-relaxed font-sans">{currentParagraph.resume_pedagogique.en_pratique}</p>
+                    </div>
+                  )}
                 </div>
-                <p className="text-xs text-zinc-300 leading-relaxed italic font-sans text-justify">
-                  {highlightText(currentParagraph.texte_integral.francais, searchQuery)}
-                </p>
-              </div>
+              )}
+
+              {/* COMMENTAIRES OFFICIELS */}
+              {currentParagraph.commentaires_officiels && currentParagraph.commentaires_officiels.length > 0 && (
+                <div className="pt-4 mt-4 border-t border-zinc-800/80">
+                  <button 
+                    onPointerDown={() => setShowCommentaires(!showCommentaires)}
+                    className="flex items-center justify-between w-full text-left py-2 text-zinc-400 hover:text-zinc-200 transition-colors cursor-pointer select-none"
+                  >
+                    <div className="flex items-center gap-1.5">
+                      <Icon name="library" className="w-4 h-4 text-amber-500" />
+                      <span className="text-[10px] font-bold uppercase tracking-widest">Commentaires Officiels ({currentParagraph.commentaires_officiels.length})</span>
+                    </div>
+                    <span className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest font-mono">
+                      {showCommentaires ? "Masquer ▲" : "Afficher ▼"}
+                    </span>
+                  </button>
+                  
+                  {showCommentaires && (
+                    <div className="mt-4 space-y-4 max-h-96 overflow-y-auto pr-2">
+                      {currentParagraph.commentaires_officiels.map((comm, idx) => (
+                        <div key={idx} className="bg-zinc-900/30 border border-zinc-850 p-4 rounded-xl space-y-2">
+                          <p className="font-hebrew-serif text-right text-amber-200 leading-relaxed text-sm md:text-base" dir="rtl">
+                            {comm.hebreu_brut}
+                          </p>
+                          <div className="h-[1px] bg-zinc-800/50 my-1"></div>
+                          <p className="text-xs text-zinc-400 italic leading-relaxed font-sans">
+                            {comm.francais}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )}
+
+
 
             </div>
           )}

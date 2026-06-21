@@ -50,7 +50,8 @@ function App() {
     setActiveBookId(book.id);
 
     try {
-      const response = await fetch(`/data/${book.id}.json`);
+      // Append a cache-busting timestamp to prevent the browser from caching old JSON data
+      const response = await fetch(`/data/${book.id}.json?t=${Date.now()}`);
       
       if (!response.ok) {
         throw new Error(`Erreur de chargement local : ${response.status}`);
@@ -126,6 +127,7 @@ function App() {
         chapterId: "ch-1",
         chapterTitle: "Siman 318",
         paragraphIndex: pIdx,
+        seif: activeParagraph.seif || String(pIdx + 1),
         previewHebrew: activeParagraph.texte_integral.hebreu_sans_voyelles.substring(0, 45) + "...",
         previewFrench: activeParagraph.texte_integral.francais.substring(0, 70) + "...",
         savedAt: Date.now()

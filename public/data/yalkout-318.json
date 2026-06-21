@@ -3,704 +3,195 @@
     "livre": "Yalkout Yossef",
     "sujet": "Hilkhot Chabbat",
     "siman": "318",
-    "seif": "1",
+    "seif": "186",
     "texte_integral": {
-      "hebreu_sans_voyelles": "מי שעבר ובישל בשבת, אם עשה כן במזיד, שידע שהיום שבת ומלאכה זו אסורה, אסור למבשל עצמו לאכול מתבשיל זה לעולם, [אפילו אחר השבת], ולאחרים מותר לאכול מהתבשיל במוצאי-שבת מיד. ואף אם בישל במזיד לצורך אחרים, התבשיל מותרหลังจากים במוצאי-שבת מיד. [ובישראל מומר העושה כן דרך קבע לצורך אחרים, ראה להלן סעיף ח']. ואין צריך להמתין במוצאי-שבת שיעור שיספיקו לבשל את המאכל במוצאי-שבת. [ילקוט יוסף שבת ג' עמוד ז'].",
-      "hebreu_avec_voyelles": "מִי שֶׁעָבַר וּבִישֵּׁל בְּשַׁבָּת, אִם עָשָׂה כֵּן בְּמֵזִיד, שֶׁיָּדַע שֶׁהַיּוֹם שַׁבָּת וּמְלָאכָה זוֹ אֲסוּרָה, אָסוּר לַמְבַשֵּׁל עַצְמוֹ לֶאֱכוֹל מִתַּבְשִׁיל זֶה לְעוֹלָם, [אֲפִילּוּ אַחַר הַשַּׁבָּת], וְלַאֲחֵרִים מוּתָּר לֶאֱכוֹל מֵהַתַּבְשִׁיל בְּמוֹצָאֵי-שַׁבָּת מִיָּד. וְאַף אִם בִּישֵּׁל בְּמֵזִיד לְצוֹרֶךְ אֲחֵרִים, הַתַּבְשִׁיל מוּתָּר לַאֲחֵרִים בְּמוֹצָאֵי-שַׁבָּת מִיָּד. [וּבְיִשְׂרָאֵל מוּמָר הָעוֹשֶׂה כֵּן דֶּרֶךְ קֶבַע לְצוֹרֶךְ אֲחֵרִים, רְאֵה לְהַלָּן סְעִיף ח']. וְאֵין צָרִיךְ לְהַמְתִּין בְּמוֹצָאֵי-שַׁבָּת שִׁיעוּר שֶׁיַּסְפִּיקוּ לְבַשֵּׁל אֶת הַמַּאֲכָל בְּמוֹצָאֵי-שַׁבָּת. [יַלְקוּט יוֹסֵף שַׁבָּת ג' עַמּוּד ז'].",
-      "francais": "A. Celui qui a transgressé et cuisiné pendant Chabbat : s'il l'a fait de manière intentionnelle (Bémezid), c'est-à-dire qu'il savait que c'était le jour du Chabbat et que ce travail (Mélakha) était interdit, il est interdit au cuisinier lui-même de manger de ce plat à tout jamais [même après le Chabbat]. Cependant, pour les autres personnes, il est permis de manger de ce plat immédiatement à l'issue du Chabbat (Motsaé Chabbat). Et même s'il a cuisiné intentionnellement pour les besoins d'autres personnes, le plat est permis pour ces autres personnes immédiatement à l'issue du Chabbat. [Concernant un Juif apostat (Moumar) qui agit ainsi de manière régulière pour les besoins d'autrui, voir plus loin au paragraphe 8]. Il n'est pas nécessaire d'attendre à l'issue du Chabbat le temps qu'il faudrait pour cuisiner ce plat après Chabbat (Bikhdé chéyaassou). [Yalkout Yossef Chabbat vol. 3, page 7]."
+      "hebreu_sans_voyelles": "א. האופה פת בשבת, או המבשל מאכל, או המבשל סממנים לצבע בהם, וכדומה, חייב משום מבשל, שהוא אחד מל\"ט מלאכות האסורות בשבת. א)",
+      "hebreu_avec_voyelles": "א. הָאוֹפֶה פַּת בְּשַׁבָּת, אוֹ הַמְבַשֵּׁל מַאֲכָל, אוֹ הַמְבַשֵּׁל סַמְמָנִים לִצְבֹּעַ בָּהֶם, וְכַדּוֹמֶה, חַיָּב מִשּׁוּם מְבַשֵּׁל, שֶׁהוּא אֶחָד מִל\"ט מְלָאכוֹת הָאֲסוּרוֹת בְּשַׁבָּת. א)",
+      "francais": "1. Celui qui cuit du pain au four pendant Shabbat, ou qui cuisine un aliment, ou qui cuit des ingrédients (plantes/épices) pour en faire de la teinture, ou toute action similaire, est coupable au titre de la transgression de \"cuire\" (Mevashel), qui est l'un des 39 travaux interdits le Shabbat. (Note a)"
     },
+    "resume_pedagogique": {
+      "sens_general": "La Torah interdit de réaliser 39 catégories de « travaux » (les Melakhot) le jour du Shabbat. Pour définir ces travaux, les Sages se sont basés sur les activités nécessaires pour bâtir et faire fonctionner le Tabernacle (le Mishkan, le temple mobile dans le désert). Dans les commentaires, un débat passionnant cherche à savoir si l'interdiction de « cuire » vient du fait qu'ils faisaient bouillir des plantes pour teindre les peaux du Tabernacle (lors de sa construction) ou du fait qu'ils cuisaient le pain sacré (lors de son utilisation quotidienne). Quel que soit l'avis retenu, la logique reste la même : utiliser la chaleur pour transformer l'état d'une matière (cuire du pain, bouillir de la viande, ou fondre du métal) relève exactement de la même interdiction fondamentale.",
+      "cas_concret": "Imaginez que vous vous réveillez le samedi matin et que vous avez envie d'une soupe de nouilles instantanée. Si vous prenez vos nouilles crues et que vous versez de l'eau bouillante directement dessus depuis une bouilloire, vous êtes en train de « cuire » (Mevashel). Même si vous ne préparez pas de la teinture pour construire un temple, le simple fait d'utiliser la chaleur pour transformer un aliment cru en un aliment comestible est l'essence même de ce travail interdit.",
+      "en_pratique": "Le jour du Shabbat, la chaleur ne doit plus jamais servir à cuire ou transformer un aliment, mais uniquement à maintenir au chaud ou réchauffer ce qui est déjà entièrement cuit avant l'entrée du Shabbat. Pour y parvenir sans transgresser les lois de la cuisson, plusieurs solutions technologiques et traditionnelles s'offrent à vous selon les habitudes de votre foyer :\n* La plaque chauffante électrique (Plata), conçue spécifiquement pour le Shabbat.\n* Un four de Shabbat doté d'un mode technique adapté (qui bloque le thermostat et les ventilateurs).\n* Une gazinière classique protégée par une tôle métallique (Blech) posée sur les boutons et les flammes pour couper la chaleur directe."
+    },
+    "commentaires_officiels": [
+      {
+        "paragraphe_id": 1,
+        "hebreu_brut": "א) מתני' שבת (עג.) אבות מלאכות ארבעים חסר אחת וכו', והאופה וכו'. ובגמרא (עד:) אמר רב פפא שבק תנא דידן בישול סממנים דהוה במשכן ונקט אופה. ופירש רש\"י, דאפייה לא שייכת במלאכת המשכן כלל. ומשני, תנא סידורא דפת נקט. ופירש רש\"י, תנא שהתחיל בפת נקט אופה במקום בישול דסממנין הוא, והוא בישול דפת. ומבואר שדין אפייה ובישול שוין הן, וממילא המבשל בשבת הוי אב מלאכה וחייב. וכן מבואר ברמב\"ם (פרק ט' מהלכות שבת) שכתב, האופה כגרוגרת חייב. אחד האופה את הפת או המבשל את המאכל, או את הסממנין, או המחמם את המים, הכל עניין אחד הוא. ע\"כ. ומבואר גם כן, שהכל חשיב אב מלאכה, וכמו שכתב באגלי טל (מלאכת אופה אות א' סק\"א), דהרמב\"ם בהלכה ו' שם התחיל לחשוב תולדות, מכלל שעד הלכה זו הכל הוא אב מלאכה. וכנראה שיסוד דין זה נלמד ממה שאמרו בגמרא שבת (עד:) שבק תנא דידן וכו', וקחשיב אפייה אב מלאכה אף שלא היה במלאכת הקמת המשכן, ומשמע דבישול ואפייה ענין אחד הוא, רק שזה במאכל וזה בפת. וע\"ש במגיד משנה, וראה עוד במה שכתב המגיד משנה (פרק ז' מהלכות שבת הלכה ד'), דאבות מלאכות שניהם ענין אחד ותוצאה אחת, אף על פי ששונים בצורת העשייה של המלאכה, מה שאין כן היכא ששוים בעשייה ושונים בתוצאה, הוי רק תולדה. ודו\"ק. והנה הטור (ריש סימן שיח) כתב, המבשל בשבת חייב. אך מרן בשלחן ערוך השמיט זה, משום שהוא דבר פשוט דבישול הוי מכלל ט\"ל מלאכות. [וכמ\"ש בבית יוסף שם על דברי הטור], ולא פירט מה הוא אב מלאכה בבישול ומה היא תולדה, משום דליכא נפקא מינה בזה בזמן הזה.",
+        "francais": "a) Michna Shabbat (73a) : \"Les travaux principaux (Avot Melakhot) sont au nombre de quarante moins un, etc., et celui qui cuit au four, etc.\" Et dans la Guemara (74b) : \"Rav Pappa a dit : Notre Tanna (l'auteur de la Michna) a laissé de côté la cuisson des ingrédients (pour la teinture) qui était présente dans le Tabernacle, et a mentionné 'celui qui cuit au four'.\" Rachi explique que la cuisson au four n'avait absolument pas sa place dans les travaux du Tabernacle. La Guemara répond : \"Le Tanna a mentionné l'ordre de préparation du pain.\" Rachi explique : Le Tanna, ayant commencé par [énumérer les étapes de fabrication du] pain, a mentionné \"cuire au four\" à la place de \"cuire des ingrédients\", et il s'agit en fait de la cuisson du pain. Il en ressort clairement que la loi de la cuisson au four (Afia) et de la cuisson à l'eau (Bichoul) sont identiques, et par conséquent, celui qui cuisine le Shabbat accomplit un travail principal (Av Melakha) et est coupable. C'est également ce qui ressort du Maïmonide (Rambam, Lois du Shabbat, chapitre 9) qui écrit : \"Celui qui cuit au four le volume d'une figue sèche est coupable. Que l'on cuise du pain au four, que l'on cuisine un aliment, ou des ingrédients, ou que l'on chauffe de l'eau, tout cela relève du même concept.\" Fin de citation. Il est également clair que tout cela est considéré comme un travail principal, comme l'a écrit le Eglei Tal (Travail de cuire, lettre 1, sous-paragraphe 1), car le Rambam, à la Halakha 6 là-bas, commence à énumérer les travaux dérivés (Toladot), ce qui implique que jusqu'à cette Halakha, tout est considéré comme un travail principal. Il semble que le fondement de cette loi soit déduit de ce qui est dit dans la Guemara Shabbat (74b) : \"Notre Tanna a laissé de côté, etc.\", et il compte la cuisson au four comme un travail principal bien qu'elle n'ait pas fait partie des travaux de construction du Tabernacle. Cela implique que cuisiner et cuire au four sont un seul et même concept, la seule différence étant que l'un s'applique aux aliments [en général] et l'autre au pain. Voir le Maguid Michné là-bas, et voir aussi ce qu'a écrit le Maguid Michné (Lois du Shabbat, chap. 7, Halakha 4), à savoir que deux travaux principaux partagent le même concept et le même résultat, même s'ils diffèrent dans la forme d'exécution du travail, contrairement au cas où ils sont identiques dans l'exécution mais diffèrent dans le résultat, où il ne s'agit alors que d'un travail dérivé (Tolada). À méditer. Or, le Tour (début du chapitre 318) a écrit : \"Celui qui cuisine le Shabbat est coupable.\" Cependant, Maran dans le Choulhan Aroukh a omis de l'écrire, car il est évident que la cuisson fait partie des 39 travaux. [Comme l'a écrit le Beit Yossef là-bas sur les propos du Tour], et il n'a pas détaillé ce qui constitue un travail principal dans la cuisson et ce qui est un travail dérivé, car il n'y a aucune implication pratique à cela de nos jours."
+      },
+      {
+        "paragraphe_id": 2,
+        "hebreu_brut": "מלאכת מבשל במשכן\nוהנה נודע דכל מלאכות שבת ילפינן מהמשכן, וכמו שאמרו בגמרא (שבת מט:) אבות מלאכות ארבעים חסר אחת כנגד מי, אמר להו רבי חנינא בר חמא כנגד עבודות המשכן [אותן המנויות בפרק כלל גדול היו צריכין למשכן, ופרשת שבת נסמכה לפרשת מלאכת המשכן ללמוד הימנה. רש\"י]. ובגמרא שם אמרו, תניא, אין חייבים אלא על מלאכה שכיוצא בה היתה במשכן, הם זרעו ואתם לא תזרעו וכו'. ועוד שם (צז:) הביאו סמך לזה, תניא, רבי אומר, דברים הדברים אלה הדברים, אלו ל\"ט מלאכות שנאמרו למשה בסיני. ופירש רש\"י, גבי שבת כתיב, דברים משמע תרין ה\"א מרבי חד הא תלת אלה בגימטריא תלתין ושש, אלו ל\"ט מלאכות. ע\"כ. והיינו, שהיו רגילים חז\"ל לדרוש ה' לח'. מפני שהם ממוצא אחד. וכ\"ה בירושלמי (פ\"ז דשבת ה\"ב), תניא, רבנן דקיסרין אמרין מן אתרה לא חסרה כלום, אל\"ף חד, למ\"ד תלתין, ח' תמניא. לא מתמנעין רבנן דרשין בין ה\"א לחי\"ת. ועיין שם בפירוש קרבן העדה. והנה בפשטות לימוד זה הוא מדנסמכה פרשת המשכן לשבת. אך מדברי המפרשים אפשר להוסיף, דזה גופא ציוה השי\"ת למשה לומר להם לישראל ולהקהילם ולצוותם על מלאכת המשכן, ושיעשו כל מלאכות אלו רק ששה ימים, וביום השביעי שישבתו מכל מלאכת המשכן, ומינה נשמע דמה שהיה בהקמת המשכן חשיב מלאכה לענין לאוסרו בשבת. ועיין בפירוש רש\"י על החומש (שמות לה, ב') הקדים להם אזהרת שבת לציווי מלאכת המשכן, לומר שאינו דוחה שבת. ע\"כ. והיינו, דהרי משה הקהיל את כל עדת בני ישראל כדי לצוותם על הקמת המשכן, ומדוע הקדים לצוות על שמירת השבת, ובפרט שכבר הזהירם על השבת מקודם לכן, אלא דבא לומר לישראל שיעשו את המשכן בששה ימים בלבד, אבל ביום השביעי יש לשבות מכל המלאכות שבהקמת המשכן. ומזה נשמע דכל המלאכות שהיו במשכן חשיבי מלאכות האסורות בשבת. וכן מבואר בדברי הספורנו שם, שכתב, מה שאמרתי למעלה כשצויתי אתכם את כל אשר דבר ה' אתי בהר סיני, הם הדברים שציוה לעשות בימי החול. ע\"כ. וכן משמעות המכילתא, דאיתא התם, ויאמר אליהם וגו', למה נאמר, לפי שנאמר ועשו לי מקדש שומע אני בין בחול בין בשבת, תלמוד לומר ויאמר להם ששת ימים תעשה מלאכה, בחול ולא בשבת. ע\"כ. [שו\"ר שכן דייק בערוך השלחן סימן רמב אות ט', דמזה באה הקבלה לחז\"ל ללמוד כללים ועיקרים גדולים במלאכת שבת]. ואין לומר דאדרבה ציוה אותם על השבת קודם הציווי להקמת המשכן כדי להורות שהקמת המשכן דוחה שבת, דזה אינו, דכיון שהקדים שבת להקמת המשכן, בודאי השבת עיקר יותר. וע\"ש בשפתי חכמים.",
+        "francais": "Le travail de cuisiner dans le Tabernacle\nIl est connu que tous les travaux du Shabbat sont déduits du Tabernacle (Mishkan), comme il est dit dans la Guemara (Shabbat 49b) : \"Les quarante moins un travaux principaux correspondent à quoi ? Rabbi Hanina bar Hama leur a dit : Ils correspondent aux travaux du Tabernacle [Ceux énumérés dans le chapitre 'Klal Gadol' étaient nécessaires au Tabernacle, et le passage biblique du Shabbat a été juxtaposé à celui de la construction du Tabernacle pour en tirer cet enseignement. Rachi].\" Et dans la Guemara là-bas, il est dit : \"Il a été enseigné : On n'est coupable que pour un travail dont l'équivalent existait dans le Tabernacle ; ils ont semé, et vous ne sèmerez pas, etc.\" Et encore là-bas (97b), ils ont apporté un appui scripturaire à cela : \"Il a été enseigné : Rabbi dit : 'Ces choses-là' (Devarim HaDevarim Eleh HaDevarim) - ce sont les 39 travaux qui ont été dits à Moïse au Sinaï.\" Rachi explique : \"À propos du Shabbat, il est écrit 'Devarim' (choses/paroles), ce qui implique deux ; la lettre 'Hé' (ה) ajoute un, ce qui fait trois ; le mot 'Eleh' (אלה) a une valeur numérique (Gematria) de trente-six, ce qui fait au total 39 travaux.\" Fin de citation. C'est-à-dire que les Sages avaient l'habitude d'interpréter le 'Hé' (ה) comme un 'Het' (ח), car ils ont la même origine phonétique. C'est aussi ce qui est dit dans le Talmud de Jérusalem (Chapitre 7 de Shabbat, Halakha 2) : \"Il a été enseigné : Les Sages de Césarée disent : De sa place, il ne manque rien ; Aleph (א) vaut un, Lamed (ל) vaut trente, Het (ח) vaut huit. Les Sages ne s'abstiennent pas d'interpréter le Hé comme un Het.\" Voir là-bas le commentaire Korban HaEda. Simplement, cet enseignement découle de la juxtaposition du passage du Tabernacle à celui du Shabbat. Cependant, d'après les propos des commentateurs, on peut ajouter que c'est précisément cela que l'Éternel a ordonné à Moïse de dire à Israël, de les rassembler et de leur ordonner concernant la construction du Tabernacle : qu'ils fassent tous ces travaux seulement pendant six jours, et que le septième jour ils chôment de tout travail du Tabernacle. De là, on comprend que ce qui servait à la construction du Tabernacle est considéré comme un travail pour l'interdire le Shabbat. Voir le commentaire de Rachi sur le Pentateuque (Exode 35:2) : \"Il a fait précéder l'avertissement du Shabbat à l'ordre de la construction du Tabernacle, pour dire que celle-ci ne repousse pas le Shabbat.\" Fin de citation. C'est-à-dire, puisque Moïse a rassemblé toute l'assemblée des enfants d'Israël pour leur ordonner la construction du Tabernacle, pourquoi a-t-il commencé par ordonner l'observation du Shabbat, d'autant plus qu'il les avait déjà avertis sur le Shabbat auparavant ? C'est pour dire à Israël qu'ils doivent construire le Tabernacle en six jours seulement, mais que le septième jour, il faut s'abstenir de tous les travaux liés à la construction du Tabernacle. De là, on déduit que tous les travaux qui étaient dans le Tabernacle sont considérés comme les travaux interdits le Shabbat. C'est également ce qui ressort des propos du Sforno là-bas, qui a écrit : \"Ce que j'ai dit plus haut quand je vous ai ordonné tout ce que l'Éternel m'a dit sur le mont Sinaï, ce sont les choses qu'Il a ordonné de faire les jours profanes.\" Fin de citation. C'est aussi le sens de la Mekhilta, où il est dit : \"'Et il leur dit, etc.', pourquoi cela est-il dit ? Puisqu'il est dit 'Ils me feront un sanctuaire', j'aurais pu comprendre que ce soit aussi bien en semaine que le Shabbat ; le verset vient donc enseigner 'Et il leur dit : Six jours le travail sera fait', en semaine et non le Shabbat.\" Fin de citation. [J'ai vu ensuite que le Aroukh HaChoulhan (chapitre 242, lettre 9) a fait cette même déduction, à savoir que c'est de là qu'est venue la tradition aux Sages d'apprendre les grandes règles et principes des travaux du Shabbat]. Et on ne peut pas dire qu'au contraire, Il leur a ordonné le Shabbat avant l'ordre de construire le Tabernacle pour montrer que la construction du Tabernacle repousse le Shabbat, car cela est faux : puisqu'Il a fait précéder le Shabbat à la construction du Tabernacle, le Shabbat est certainement plus fondamental. Voir le Siftei Hakhamim là-bas."
+      },
+      {
+        "paragraphe_id": 3,
+        "hebreu_brut": "ויש לחקור מהיכן אנו למדים עניני המלאכות שהיו במשכן, אם בדברים שהיו בעת הקמת המשכן, או גם מהדברים שהיו בתוך המשכן עצמו. ובפשטות הלימוד הוא מהמלאכות שהיו בהקמת המשכן, ובפרט לפי מה שביאר הספורנו הנ\"ל. וכן משמע מהגמרא (שבת עד:), דמלאכת מבשל היתה במשכן במה שהיו צריכים לבשל סממנים כדי לצבוע את העורות. ונמצא דילפינן מהמלאכות שהיו בהקמת המשכן, דאי תימא דילפינן גם מהמלאכות שהיו בתוך המשכן, אמאי אמרו בגמרא שבק תנא דידן וכו', והרי מצינו אפייה במשכן בשתי הלחם ובמנחות. וכן משמע עוד ממה שאמרו בגמרא (שבת עה.) שוחט משום מאי חייב, ופירש רש\"י, שוחט היכא הוה במשכן, רב אמר משום צובע וכו'. ואי תימא דילפינן מהמלאכות שהיו במשכן עצמו, הרי מצינו שחיטה במשכן בקרבנות. וע\"כ דילפינן מהמלאכות שהיו בהקמת המשכן, ולא מצינו שם שחיטה. וכן כתב לדייק באגלי טל (בפתיחת הספר). ע\"ש. ועיין ביבמות (ו:) מה לי בישול פתילה מה לי בישול סממנין, ופירש רש\"י, מתיך פתילה של אבר וזורקה לתוך פיו ויורדת לתוך מעיו והאי בישול גמור הוא ואב מלאכה הוא, דממשכן ילפינן, ובישול סממנין היה במלאכת המשכן לצבע תכלת ותולעת השני, ע\"כ, אך באגלי טל הנ\"ל הביא מרבינו אברהם בן הרמב\"ם שפירש בשם רבינו האי גאון, שאלו אחד עשר המלאכות [הזורע, החורש וכו' עד האופה] היו נוהגות בלחם בקרבן תמיד בכל יום, ובחביתי כהן גדול וכו'. ומשמע דילפינן מהמלאכות שהיו נעשות במשכן עצמו. וכתב שם דיסוד המחלוקת בביאור המשנה בשבת (צב.) גבי הוצאה, המוציא בין בימינו בין בשמאלו, בתוך חיקו או על כתפיו חייב, שכן משא בני קהת. ופירש רש\"י, משא בני קהת קאי על הכתף, כדכתיב בכתף ישאו, וימין ושמאל וחיק אורח ארעא הוא. ורב האי גאון פירש על פי הירושלמי, על הפסוק (במדבר ז, טז): ופקודת אלעזר בן אהרן הכהן שמן המאור וקטורת הסמים ומנחת התמיד ושמן המשחה, שמן אחד בימין, שמן אחד בשמאל, הקטורת בחיקו, והחביתין בכתף. [ודלא כרש\"י שכתב דימין ושמאל אורח ארעא]. ונמצא דרש\"י ורב האי גאון כל אחד לטעמיה אזיל. וע\"ש באגלי טל מה שכתב ליישב שיטת רב האי גאון מהסוגיא בשבת עד: ועה. וראה עוד בשו\"ת אבני נזר חלק א' (סימן כא). ע\"ש. ועיין בשו\"ת מבית מאיר חלק ב' (סימן ה') שעמד על זה, דהמבשל בשבת למה יהיה חייב לרבנן דסבירא להו דדוקא טוחן סממנים חייב משום שכך היה במשכן, ולפי זה גם בבישול הרי בישול בשר לא היה במשכן, ואם כן אמאי חייבים על בישול בשר. ע\"ש. [ומה שלא התירה התורה לבשל בשבת לצורך אוכל נפש כמו שהתירה ביום טוב, ראה בשו\"ת רב פעלים (סוד ישרים, סימן ד׳). ע\"ש].",
+        "francais": "Il convient d'examiner d'où nous apprenons les concepts des travaux qui étaient dans le Tabernacle : est-ce des choses qui se faisaient lors de la construction du Tabernacle, ou également des choses qui se faisaient à l'intérieur du Tabernacle lui-même (le service quotidien) ? Simplement, l'enseignement provient des travaux qui servaient à la construction du Tabernacle, en particulier selon ce qu'a expliqué le Sforno susmentionné. C'est aussi ce qui ressort de la Guemara (Shabbat 74b), selon laquelle le travail de cuisiner était présent dans le Tabernacle car ils devaient cuire des ingrédients pour teindre les peaux. Il en résulte que nous apprenons des travaux liés à la construction du Tabernacle, car si tu disais que nous apprenons aussi des travaux effectués à l'intérieur du Tabernacle, pourquoi la Guemara a-t-elle dit \"Notre Tanna a laissé de côté, etc.\" ? En effet, nous trouvons bien la cuisson au four dans le Tabernacle avec les deux pains et les offrandes de farine (Menahot). C'est aussi ce qui ressort de ce qui est dit dans la Guemara (Shabbat 75a) : \"Celui qui abat rituellement (Chohet), à quel titre est-il coupable ?\" Rachi explique : \"Où y avait-il de l'abattage dans le Tabernacle ? Rav a dit : au titre de teindre, etc.\" Or, si tu disais que nous apprenons des travaux effectués dans le Tabernacle lui-même, nous trouvons bien l'abattage dans le Tabernacle avec les sacrifices ! Il faut donc en conclure que nous apprenons des travaux liés à la construction du Tabernacle, et nous n'y trouvons pas d'abattage. C'est également la déduction faite par le Eglei Tal (dans l'introduction du livre). Voir là-bas. Et voir dans Yevamot (6b) : \"Quelle différence entre la cuisson d'une mèche et la cuisson d'ingrédients ?\" Rachi explique : \"Il fait fondre une mèche de plomb et la jette dans sa bouche, et elle descend dans ses entrailles ; c'est une cuisson absolue et un travail principal, car nous l'apprenons du Tabernacle, et la cuisson d'ingrédients faisait partie des travaux du Tabernacle pour teindre en azur et en cramoisi.\" Fin de citation. Cependant, dans le Eglei Tal susmentionné, il est rapporté au nom de Rabbeinou Avraham fils du Rambam, qui expliquait au nom de Rabbeinou Haï Gaon, que ces onze travaux [semer, labourer, etc., jusqu'à cuire au four] étaient pratiqués pour le pain du sacrifice perpétuel chaque jour, et pour les galettes du Grand Prêtre, etc. Cela implique que nous apprenons des travaux qui étaient effectués dans le Tabernacle lui-même. Il écrit là-bas que le fondement de cette controverse réside dans l'explication de la Michna dans Shabbat (92a) concernant le port (Hotza'ah) : \"Celui qui porte, que ce soit de la main droite ou de la main gauche, dans son giron ou sur ses épaules, est coupable, car tel était le port des fils de Kehat.\" Rachi explique : \"Le port des fils de Kehat se faisait sur l'épaule, comme il est écrit 'ils porteront sur l'épaule', tandis que la droite, la gauche et le giron sont la manière habituelle des gens.\" Mais Rav Haï Gaon a expliqué, d'après le Talmud de Jérusalem, sur le verset (Nombres 4:16) : \"La charge d'Eléazar, fils d'Aaron le prêtre, sera l'huile du luminaire, l'encens aromatique, l'offrande perpétuelle et l'huile d'onction\" : une huile à droite, une huile à gauche, l'encens dans son giron, et les galettes sur l'épaule. [Contrairement à Rachi qui a écrit que la droite et la gauche sont la manière habituelle]. Il en résulte que Rachi et Rav Haï Gaon suivent chacun leur propre raisonnement. Voir dans le Eglei Tal comment il s'efforce de concilier l'opinion de Rav Haï Gaon avec le passage talmudique de Shabbat 74b et 75a. Voir aussi dans les Responsa Avnei Nezer vol. 1 (chap. 21). Voir là-bas. Et voir dans les Responsa Mibeit Meir vol. 2 (chap. 5) qui s'est penché sur la question : pourquoi celui qui cuisine le Shabbat serait-il coupable selon les Sages qui estiment que seul celui qui moud des ingrédients est coupable parce que c'était ainsi dans le Tabernacle ? Selon cela, pour la cuisson également, la cuisson de la viande n'existait pas dans le Tabernacle, alors pourquoi serait-on coupable pour la cuisson de la viande ? Voir là-bas. [Et quant à la raison pour laquelle la Torah n'a pas permis de cuisiner le Shabbat pour les besoins alimentaires comme elle l'a permis les jours de fête (Yom Tov), voir les Responsa Rav Pe'alim (Sod Yesharim, chap. 4). Voir là-bas]."
+      }
+    ],
     "mots_alignes": [
       {
+        "id": 0,
+        "hebreu_brut": "א.",
+        "hebreu_voyelles": "א.",
+        "francais_mot": "1.",
+        "expression_contexte": "1."
+      },
+      {
         "id": 1,
-        "hebreu_brut": "מי",
-        "hebreu_voyelles": "מִי",
-        "francais_mot": "Qui",
-        "expression_contexte": "Celui qui"
+        "hebreu_brut": "האופה",
+        "hebreu_voyelles": "הָאוֹפֶה",
+        "francais_mot": "Celui qui cuit au four",
+        "expression_contexte": "Celui qui cuit au four"
       },
       {
         "id": 2,
-        "hebreu_brut": "שעבר",
-        "hebreu_voyelles": "שֶׁעָבַר",
-        "francais_mot": "qui a transgressé",
-        "expression_contexte": "a transgressé"
+        "hebreu_brut": "פת",
+        "hebreu_voyelles": "פַּת",
+        "francais_mot": "du pain",
+        "expression_contexte": "du pain"
       },
       {
         "id": 3,
-        "hebreu_brut": "ובישל",
-        "hebreu_voyelles": "וּבִישֵּׁל",
-        "francais_mot": "et a cuisiné",
-        "expression_contexte": "et cuisiné"
+        "hebreu_brut": "בשבת,",
+        "hebreu_voyelles": "בְּשַׁבָּת,",
+        "francais_mot": "pendant Shabbat,",
+        "expression_contexte": "pendant Shabbat,"
       },
       {
         "id": 4,
-        "hebreu_brut": "בשבת",
-        "hebreu_voyelles": "בְּשַׁבָּת",
-        "francais_mot": "pendant Chabbat",
-        "expression_contexte": "pendant Chabbat"
+        "hebreu_brut": "או",
+        "hebreu_voyelles": "אוֹ",
+        "francais_mot": "ou",
+        "expression_contexte": "ou"
       },
       {
         "id": 5,
-        "hebreu_brut": "אם",
-        "hebreu_voyelles": "אִם",
-        "francais_mot": "si",
-        "expression_contexte": "s'il"
-      },
-      {
-        "id": 6,
-        "hebreu_brut": "עשה",
-        "hebreu_voyelles": "עָשָׂה",
-        "francais_mot": "a fait",
-        "expression_contexte": "l'a fait"
-      },
-      {
-        "id": 7,
-        "hebreu_brut": "כן",
-        "hebreu_voyelles": "כֵּן",
-        "francais_mot": "ainsi",
-        "expression_contexte": "de manière"
-      },
-      {
-        "id": 8,
-        "hebreu_brut": "במזיד",
-        "hebreu_voyelles": "בְּמֵזִיד",
-        "francais_mot": "intentionnellement",
-        "expression_contexte": "intentionnelle (Bémezid)"
-      },
-      {
-        "id": 9,
-        "hebreu_brut": "שידע",
-        "hebreu_voyelles": "שֶׁיָּדַע",
-        "francais_mot": "qu'il savait",
-        "expression_contexte": "c'est-à-dire qu'il savait"
-      },
-      {
-        "id": 10,
-        "hebreu_brut": "שהיום",
-        "hebreu_voyelles": "שֶׁהַיּוֹם",
-        "francais_mot": "que le jour",
-        "expression_contexte": "que c'était le jour du"
-      },
-      {
-        "id": 11,
-        "hebreu_brut": "שבת",
-        "hebreu_voyelles": "שַׁבָּת",
-        "francais_mot": "Chabbat",
-        "expression_contexte": "Chabbat"
-      },
-      {
-        "id": 12,
-        "hebreu_brut": "ומלאכה",
-        "hebreu_voyelles": "וּמְלָאכָה",
-        "francais_mot": "et travail",
-        "expression_contexte": "et que ce travail"
-      },
-      {
-        "id": 13,
-        "hebreu_brut": "זו",
-        "hebreu_voyelles": "זוֹ",
-        "francais_mot": "celle-ci",
-        "expression_contexte": "(Mélakha) était"
-      },
-      {
-        "id": 14,
-        "hebreu_brut": "אסורה",
-        "hebreu_voyelles": "אֲסוּרָה",
-        "francais_mot": "interdite",
-        "expression_contexte": "interdit"
-      },
-      {
-        "id": 15,
-        "hebreu_brut": "אסור",
-        "hebreu_voyelles": "אָסוּר",
-        "francais_mot": "interdit",
-        "expression_contexte": "il est interdit"
-      },
-      {
-        "id": 16,
-        "hebreu_brut": "למבשל",
-        "hebreu_voyelles": "לַמְבַשֵּׁל",
-        "francais_mot": "au cuisinier",
-        "expression_contexte": "au cuisinier"
-      },
-      {
-        "id": 17,
-        "hebreu_brut": "עצמו",
-        "hebreu_voyelles": "עַצְמוֹ",
-        "francais_mot": "lui-même",
-        "expression_contexte": "lui-même"
-      },
-      {
-        "id": 18,
-        "hebreu_brut": "לאכול",
-        "hebreu_voyelles": "לֶאֱכוֹל",
-        "francais_mot": "de manger",
-        "expression_contexte": "de manger"
-      },
-      {
-        "id": 19,
-        "hebreu_brut": "מתבשיל",
-        "hebreu_voyelles": "מִתַּבְשִׁיל",
-        "francais_mot": "de plat",
-        "expression_contexte": "de ce plat"
-      },
-      {
-        "id": 20,
-        "hebreu_brut": "זה",
-        "hebreu_voyelles": "זֶה",
-        "francais_mot": "ce",
-        "expression_contexte": "ce"
-      },
-      {
-        "id": 21,
-        "hebreu_brut": "לעולם",
-        "hebreu_voyelles": "לְעוֹלָם",
-        "francais_mot": "à jamais",
-        "expression_contexte": "à tout jamais"
-      },
-      {
-        "id": 22,
-        "hebreu_brut": "אפילו",
-        "hebreu_voyelles": "אֲפִילּוּ",
-        "francais_mot": "même",
-        "expression_contexte": "[même"
-      },
-      {
-        "id": 23,
-        "hebreu_brut": "אחר",
-        "hebreu_voyelles": "אַחַר",
-        "francais_mot": "après",
-        "expression_contexte": "après"
-      },
-      {
-        "id": 24,
-        "hebreu_brut": "השבת",
-        "hebreu_voyelles": "הַשַּׁבָּת",
-        "francais_mot": "le Chabbat",
-        "expression_contexte": "le Chabbat]"
-      },
-      {
-        "id": 25,
-        "hebreu_brut": "ולאחרים",
-        "hebreu_voyelles": "וְלַאֲחֵרִים",
-        "francais_mot": "et aux autres",
-        "expression_contexte": "Cependant, pour les autres personnes"
-      },
-      {
-        "id": 26,
-        "hebreu_brut": "מותר",
-        "hebreu_voyelles": "מוּתָּר",
-        "francais_mot": "permis",
-        "expression_contexte": "il est permis"
-      },
-      {
-        "id": 27,
-        "hebreu_brut": "לאכול",
-        "hebreu_voyelles": "לֶאֱכוֹל",
-        "francais_mot": "de manger",
-        "expression_contexte": "de manger"
-      },
-      {
-        "id": 28,
-        "hebreu_brut": "מהתבשיל",
-        "hebreu_voyelles": "מֵהַתַּבְשִׁיל",
-        "francais_mot": "du plat",
-        "expression_contexte": "de ce plat"
-      },
-      {
-        "id": 29,
-        "hebreu_brut": "במוצאי-שבת",
-        "hebreu_voyelles": "בְּמוֹצָאֵי-שַׁבָּת",
-        "francais_mot": "à la sortie du Chabbat",
-        "expression_contexte": "immédiatement à l'issue du Chabbat (Motsaé Chabbat)"
-      },
-      {
-        "id": 30,
-        "hebreu_brut": "מיד",
-        "hebreu_voyelles": "מִיָּד",
-        "francais_mot": "immédiatement",
-        "expression_contexte": "immédiatement"
-      },
-      {
-        "id": 31,
-        "hebreu_brut": "ואף",
-        "hebreu_voyelles": "וְאַף",
-        "francais_mot": "et même",
-        "expression_contexte": "Et même"
-      },
-      {
-        "id": 32,
-        "hebreu_brut": "אם",
-        "hebreu_voyelles": "אִם",
-        "francais_mot": "si",
-        "expression_contexte": "s'il"
-      },
-      {
-        "id": 33,
-        "hebreu_brut": "בישל",
-        "hebreu_voyelles": "בִּישֵּׁל",
-        "francais_mot": "a cuisiné",
-        "expression_contexte": "a cuisiné"
-      },
-      {
-        "id": 34,
-        "hebreu_brut": "במזיד",
-        "hebreu_voyelles": "בְּמֵזִיד",
-        "francais_mot": "intentionnellement",
-        "expression_contexte": "intentionnellement"
-      },
-      {
-        "id": 35,
-        "hebreu_brut": "לצורך",
-        "hebreu_voyelles": "לְצוֹרֶךְ",
-        "francais_mot": "pour le besoin de",
-        "expression_contexte": "pour les besoins d'"
-      },
-      {
-        "id": 36,
-        "hebreu_brut": "אחרים",
-        "hebreu_voyelles": "אֲחֵרִים",
-        "francais_mot": "autres",
-        "expression_contexte": "autres personnes"
-      },
-      {
-        "id": 37,
-        "hebreu_brut": "התבשיל",
-        "hebreu_voyelles": "הַתַּבְשִׁיל",
-        "francais_mot": "le plat",
-        "expression_contexte": "le plat"
-      },
-      {
-        "id": 38,
-        "hebreu_brut": "מותר",
-        "hebreu_voyelles": "מוּתָּר",
-        "francais_mot": "permis",
-        "expression_contexte": "est permis"
-      },
-      {
-        "id": 39,
-        "hebreu_brut": "לאחרים",
-        "hebreu_voyelles": "לַאֲחֵרִים",
-        "francais_mot": "aux autres",
-        "expression_contexte": "pour ces autres personnes"
-      },
-      {
-        "id": 40,
-        "hebreu_brut": "במוצאי-שבת",
-        "hebreu_voyelles": "בְּמוֹצָאֵי-שַׁבָּת",
-        "francais_mot": "à la sortie du Chabbat",
-        "expression_contexte": "immédiatement à l'issue du Chabbat"
-      },
-      {
-        "id": 41,
-        "hebreu_brut": "מיד",
-        "hebreu_voyelles": "מִיָּד",
-        "francais_mot": "immédiatement",
-        "expression_contexte": "immédiatement"
-      },
-      {
-        "id": 42,
-        "hebreu_brut": "ובישראל",
-        "hebreu_voyelles": "וּבְיִשְׂרָאֵל",
-        "francais_mot": "et chez un Israël",
-        "expression_contexte": "[Concernant un Juif"
-      },
-      {
-        "id": 43,
-        "hebreu_brut": "מומר",
-        "hebreu_voyelles": "מוּמָר",
-        "francais_mot": "apostat",
-        "expression_contexte": "apostat (Moumar)"
-      },
-      {
-        "id": 44,
-        "hebreu_brut": "העושה",
-        "hebreu_voyelles": "הָעוֹשֶׂה",
-        "francais_mot": "qui fait",
-        "expression_contexte": "qui agit"
-      },
-      {
-        "id": 45,
-        "hebreu_brut": "כן",
-        "hebreu_voyelles": "כֵּן",
-        "francais_mot": "ainsi",
-        "expression_contexte": "ainsi"
-      },
-      {
-        "id": 46,
-        "hebreu_brut": "דרך",
-        "hebreu_voyelles": "דֶּרֶךְ",
-        "francais_mot": "chemin / voie",
-        "expression_contexte": "de manière"
-      },
-      {
-        "id": 47,
-        "hebreu_brut": "קבע",
-        "hebreu_voyelles": "קֶבַע",
-        "francais_mot": "fixe",
-        "expression_contexte": "régulière"
-      },
-      {
-        "id": 48,
-        "hebreu_brut": "לצורך",
-        "hebreu_voyelles": "לְצוֹרֶךְ",
-        "francais_mot": "pour le besoin de",
-        "expression_contexte": "pour les besoins d'"
-      },
-      {
-        "id": 49,
-        "hebreu_brut": "אחרים",
-        "hebreu_voyelles": "אֲחֵרִים",
-        "francais_mot": "autres",
-        "expression_contexte": "autrui"
-      },
-      {
-        "id": 50,
-        "hebreu_brut": "ראה",
-        "hebreu_voyelles": "רְאֵה",
-        "francais_mot": "vois",
-        "expression_contexte": "voir"
-      },
-      {
-        "id": 51,
-        "hebreu_brut": "להלן",
-        "hebreu_voyelles": "לְהַלָּן",
-        "francais_mot": "ci-après",
-        "expression_contexte": "plus loin"
-      },
-      {
-        "id": 52,
-        "hebreu_brut": "סעיף",
-        "hebreu_voyelles": "סְעִיף",
-        "francais_mot": "paragraphe",
-        "expression_contexte": "au paragraphe"
-      },
-      {
-        "id": 53,
-        "hebreu_brut": "ח'",
-        "hebreu_voyelles": "ח'",
-        "francais_mot": "8",
-        "expression_contexte": "8]"
-      },
-      {
-        "id": 54,
-        "hebreu_brut": "ואין",
-        "hebreu_voyelles": "וְאֵין",
-        "francais_mot": "et il n'y a pas",
-        "expression_contexte": "Il n'est pas"
-      },
-      {
-        "id": 55,
-        "hebreu_brut": "צריך",
-        "hebreu_voyelles": "צָרִיךְ",
-        "francais_mot": "besoin",
-        "expression_contexte": "nécessaire"
-      },
-      {
-        "id": 56,
-        "hebreu_brut": "להמתין",
-        "hebreu_voyelles": "לְהַמְתִּין",
-        "francais_mot": "d'attendre",
-        "expression_contexte": "d'attendre"
-      },
-      {
-        "id": 57,
-        "hebreu_brut": "במוצאי-שבת",
-        "hebreu_voyelles": "בְּמוֹצָאֵי-שַׁבָּת",
-        "francais_mot": "à la sortie du Chabbat",
-        "expression_contexte": "à l'issue du Chabbat"
-      },
-      {
-        "id": 58,
-        "hebreu_brut": "שיעור",
-        "hebreu_voyelles": "שִׁיעוּר",
-        "francais_mot": "mesure de",
-        "expression_contexte": "le temps"
-      },
-      {
-        "id": 59,
-        "hebreu_brut": "שיספיקו",
-        "hebreu_voyelles": "שֶׁיַּסְפִּיקוּ",
-        "francais_mot": "qu'ils suffiront",
-        "expression_contexte": "qu'il faudrait"
-      },
-      {
-        "id": 60,
-        "hebreu_brut": "לבשל",
-        "hebreu_voyelles": "לְבַשֵּׁל",
-        "francais_mot": "pour cuisiner",
-        "expression_contexte": "pour cuisiner"
-      },
-      {
-        "id": 61,
-        "hebreu_brut": "את",
-        "hebreu_voyelles": "אֶת",
-        "francais_mot": "(particule d'accusatif)",
-        "expression_contexte": "ce"
-      },
-      {
-        "id": 62,
-        "hebreu_brut": "המאכל",
-        "hebreu_voyelles": "הַמַּאֲכָל",
-        "francais_mot": "la nourriture",
-        "expression_contexte": "plat"
-      },
-      {
-        "id": 63,
-        "hebreu_brut": "במוצאי-שבת",
-        "hebreu_voyelles": "בְּמוֹצָאֵי-שַׁבָּת",
-        "francais_mot": "à la sortie du Chabbat",
-        "expression_contexte": "après Chabbat (Bikhdé chéyaassou)"
-      },
-      {
-        "id": 64,
-        "hebreu_brut": "ילקוט",
-        "hebreu_voyelles": "יַלְקוּט",
-        "francais_mot": "Yalkout",
-        "expression_contexte": "[Yalkout"
-      },
-      {
-        "id": 65,
-        "hebreu_brut": "יוסף",
-        "hebreu_voyelles": "יוֹסֵף",
-        "francais_mot": "Yossef",
-        "expression_contexte": "Yossef"
-      },
-      {
-        "id": 66,
-        "hebreu_brut": "שבת",
-        "hebreu_voyelles": "שַׁבָּת",
-        "francais_mot": "Chabbat",
-        "expression_contexte": "Chabbat"
-      },
-      {
-        "id": 67,
-        "hebreu_brut": "ג'",
-        "hebreu_voyelles": "ג'",
-        "francais_mot": "3",
-        "expression_contexte": "vol. 3,"
-      },
-      {
-        "id": 68,
-        "hebreu_brut": "עמוד",
-        "hebreu_voyelles": "עַמּוּד",
-        "francais_mot": "page",
-        "expression_contexte": "page"
-      },
-      {
-        "id": 69,
-        "hebreu_brut": "ז'",
-        "hebreu_voyelles": "ז'",
-        "francais_mot": "7",
-        "expression_contexte": "7]"
-      }
-    ]
-  },
-  {
-    "livre": "Yalkout Yossef",
-    "sujet": "Hilkhot Chabbat",
-    "siman": "318",
-    "seif": "2",
-    "texte_integral": {
-      "hebreu_sans_voyelles": "ב. המבשל בשבת במזיד לצורך עצמו אף שהתבשיל נאסר עליו לעולם, עם כל זה מותר לו למכור את התבשיל לאחרים, ואין צריך לנכות דמי הבישול במכירה, שאין מעשה שבת באופן כזה אסורים בהנאה. [ילקוט יוסף שבת כרך ג' עמוד ט\"ו, ובמהדורת תשס\"ד גם עמוד תמ\"ג. שארית יוסף חלק ג' עמוד תכ\"א. שו\"ת יביע אומר חלק י' בהערות לרב פעלים חלק ג' סימן י\"ז].",
-      "hebreu_avec_voyelles": "ב. הַמְבַשֵּׁל בְּשַׁבָּת בְּמֵזִיד לְצוֹרֶךְ עַצְמוֹ אַף שֶׁהַתַּבְשִׁיל נֶאֱסַר עָלָיו לְעוֹלָם, עִם כָּל זֶה מוּתָּר לוֹ לִמְכּוֹר אֶת הַתַּבְשִׁיל לַאֲחֵרִים, וְאֵין צָרִיךְ לְנַכּוֹת דְּמֵי הַבִּישּׁוּל בַּמְּכִירָה, שֶׁאֵין מַעֲשֵׂה שַׁבָּת בְּאוֹפֶן כָּזֶה אֲסוּרִים בַּהֲנָאָה. [יַלְקוּט יוֹסֵף שַׁבָּת כֶּרֶךְ ג' עַמּוּד ט\"ו, וּבְמַהֲדוּרַת תְּשׁס\"ד גַּם עַמּוּד תמ\"ג. שְׁאֵרִית יוֹסֵף חֵלֶק ג' עַמּוּד תכ\"א. שׁוּ\"ת יַבִּיעַ אוֹמֶר חֵלֶק י' בְּהֶעָרוֹת לְרַב פְּעָלִים חֵלֶק ג' סִימָן י\"ז].",
-      "francais": "B. Celui qui cuisine pendant Chabbat de manière intentionnelle (Bémezid) pour ses propres besoins, bien que le plat lui soit interdit à tout jamais, il lui est néanmoins permis de vendre ce plat à d'autres personnes. Il n'est pas nécessaire de déduire la valeur ajoutée par la cuisson lors de la vente, car le profit tiré d'une action accomplie pendant Chabbat (Maassé Chabbat) n'est pas interdit de cette manière. [Yalkout Yossef Chabbat vol. 3, page 15, et dans l'édition de 5764 également page 443. Chéérit Yossef vol. 3 page 421. Responsa Yabia Omer vol. 10 dans les notes sur le Rav Péalim vol. 3 chapitre 17]."
-    },
-    "mots_alignes": [
-      {
-        "id": 1,
-        "hebreu_brut": "ב",
-        "hebreu_voyelles": "ב.",
-        "francais_mot": "B",
-        "expression_contexte": "B"
-      },
-      {
-        "id": 2,
         "hebreu_brut": "המבשל",
         "hebreu_voyelles": "הַמְבַשֵּׁל",
-        "francais_mot": "Celui qui cuisine",
-        "expression_contexte": "Celui qui cuisine"
-      },
-      {
-        "id": 3,
-        "hebreu_brut": "בשבת",
-        "hebreu_voyelles": "בְּשַׁבָּת",
-        "francais_mot": "pendant Chabbat",
-        "expression_contexte": "pendant Chabbat"
-      },
-      {
-        "id": 4,
-        "hebreu_brut": "במזיד",
-        "hebreu_voyelles": "בְּמֵזִיד",
-        "francais_mot": "intentionnellement",
-        "expression_contexte": "de manière intentionnelle (Bémezid)"
-      },
-      {
-        "id": 5,
-        "hebreu_brut": "לצורך",
-        "hebreu_voyelles": "לְצוֹרֶךְ",
-        "francais_mot": "pour le besoin de",
-        "expression_contexte": "pour ses besoins"
+        "francais_mot": "qui cuisine",
+        "expression_contexte": "qui cuisine"
       },
       {
         "id": 6,
-        "hebreu_brut": "עצמו",
-        "hebreu_voyelles": "עַצְמוֹ",
-        "francais_mot": "lui-même",
-        "expression_contexte": "propres"
+        "hebreu_brut": "מאכל,",
+        "hebreu_voyelles": "מַאֲכָל,",
+        "francais_mot": "un aliment,",
+        "expression_contexte": "un aliment,"
       },
       {
         "id": 7,
-        "hebreu_brut": "אף",
-        "hebreu_voyelles": "אַף",
-        "francais_mot": "même / bien que",
-        "expression_contexte": "bien que"
+        "hebreu_brut": "או",
+        "hebreu_voyelles": "אוֹ",
+        "francais_mot": "ou",
+        "expression_contexte": "ou"
       },
       {
         "id": 8,
-        "hebreu_brut": "שהתבשיל",
-        "hebreu_voyelles": "שֶׁהַתַּבְשִׁיל",
-        "francais_mot": "que le plat",
-        "expression_contexte": "le plat"
+        "hebreu_brut": "המבשל",
+        "hebreu_voyelles": "הַמְבַשֵּׁל",
+        "francais_mot": "qui cuit",
+        "expression_contexte": "qui cuit"
       },
       {
         "id": 9,
-        "hebreu_brut": "נאסר",
-        "hebreu_voyelles": "נֶאֱסַר",
-        "francais_mot": "a été interdit",
-        "expression_contexte": "soit interdit"
+        "hebreu_brut": "סממנים",
+        "hebreu_voyelles": "סַמְמָנִים",
+        "francais_mot": "des ingrédients",
+        "expression_contexte": "des ingrédients (plantes/épices)"
       },
       {
         "id": 10,
-        "hebreu_brut": "עליו",
-        "hebreu_voyelles": "עָלָיו",
-        "francais_mot": "sur lui",
-        "expression_contexte": "lui"
+        "hebreu_brut": "לצבע",
+        "hebreu_voyelles": "לִצְבֹּעַ",
+        "francais_mot": "pour teindre",
+        "expression_contexte": "pour en faire de la teinture"
       },
       {
         "id": 11,
-        "hebreu_brut": "לעולם",
-        "hebreu_voyelles": "לְעוֹלָם",
-        "francais_mot": "à jamais",
-        "expression_contexte": "à tout jamais"
+        "hebreu_brut": "בהם,",
+        "hebreu_voyelles": "בָּהֶם,",
+        "francais_mot": "avec eux,",
+        "expression_contexte": "avec eux,"
       },
       {
         "id": 12,
-        "hebreu_brut": "עם כל זה",
-        "hebreu_voyelles": "עִם כָּל זֶה",
-        "francais_mot": "malgré tout cela",
-        "expression_contexte": "il lui est néanmoins"
+        "hebreu_brut": "וכדומה,",
+        "hebreu_voyelles": "וְכַדּוֹמֶה,",
+        "francais_mot": "et similaire,",
+        "expression_contexte": "ou toute action similaire,"
       },
       {
         "id": 13,
-        "hebreu_brut": "מותר",
-        "hebreu_voyelles": "מוּתָּר",
-        "francais_mot": "permis",
-        "expression_contexte": "permis"
+        "hebreu_brut": "חייב",
+        "hebreu_voyelles": "חַיָּב",
+        "francais_mot": "est coupable",
+        "expression_contexte": "est coupable"
       },
       {
         "id": 14,
-        "hebreu_brut": "לו",
-        "hebreu_voyelles": "לוֹ",
-        "francais_mot": "à lui",
-        "expression_contexte": "de"
+        "hebreu_brut": "משום",
+        "hebreu_voyelles": "מִשּׁוּם",
+        "francais_mot": "au titre de",
+        "expression_contexte": "au titre de la transgression de"
       },
       {
         "id": 15,
-        "hebreu_brut": "למכור",
-        "hebreu_voyelles": "לִמְכּוֹר",
-        "francais_mot": "vendre",
-        "expression_contexte": "vendre"
+        "hebreu_brut": "מבשל,",
+        "hebreu_voyelles": "מְבַשֵּׁל,",
+        "francais_mot": "cuire,",
+        "expression_contexte": "\"cuire\" (Mevashel),"
       },
       {
         "id": 16,
-        "hebreu_brut": "את",
-        "hebreu_voyelles": "אֶת",
-        "francais_mot": "(particule d'accusatif)",
-        "expression_contexte": "(non traduit)"
+        "hebreu_brut": "שהוא",
+        "hebreu_voyelles": "שֶׁהוּא",
+        "francais_mot": "qui est",
+        "expression_contexte": "qui est"
       },
       {
         "id": 17,
-        "hebreu_brut": "התבשיל",
-        "hebreu_voyelles": "הַתַּבְשִׁיל",
-        "francais_mot": "le plat",
-        "expression_contexte": "ce plat"
+        "hebreu_brut": "אחד",
+        "hebreu_voyelles": "אֶחָד",
+        "francais_mot": "un",
+        "expression_contexte": "l'un"
       },
       {
         "id": 18,
-        "hebreu_brut": "לאחרים",
-        "hebreu_voyelles": "לַאֲחֵרִים",
-        "francais_mot": "à d'autres",
-        "expression_contexte": "à d'autres personnes"
+        "hebreu_brut": "מל\"ט",
+        "hebreu_voyelles": "מִל\"ט",
+        "francais_mot": "des 39",
+        "expression_contexte": "des 39"
       },
       {
         "id": 19,
-        "hebreu_brut": "ואין צריך",
-        "hebreu_voyelles": "וְאֵין צָרִיךְ",
-        "francais_mot": "et il n'y a pas besoin",
-        "expression_contexte": "Il n'est pas nécessaire"
+        "hebreu_brut": "מלאכות",
+        "hebreu_voyelles": "מְלָאכוֹת",
+        "francais_mot": "travaux",
+        "expression_contexte": "travaux"
       },
       {
         "id": 20,
-        "hebreu_brut": "לנכות",
-        "hebreu_voyelles": "לְנַכּוֹת",
-        "francais_mot": "déduire",
-        "expression_contexte": "de déduire"
+        "hebreu_brut": "האסורות",
+        "hebreu_voyelles": "הָאֲסוּרוֹת",
+        "francais_mot": "interdits",
+        "expression_contexte": "interdits"
       },
       {
         "id": 21,
-        "hebreu_brut": "דמי",
-        "hebreu_voyelles": "דְּמֵי",
-        "francais_mot": "le prix de / la valeur de",
-        "expression_contexte": "la valeur ajoutée par"
+        "hebreu_brut": "בשבת.",
+        "hebreu_voyelles": "בְּשַׁבָּת.",
+        "francais_mot": "le Shabbat.",
+        "expression_contexte": "le Shabbat."
       },
       {
         "id": 22,
-        "hebreu_brut": "הבישול",
-        "hebreu_voyelles": "הַבִּישּׁוּל",
-        "francais_mot": "la cuisson",
-        "expression_contexte": "la cuisson"
-      },
-      {
-        "id": 23,
-        "hebreu_brut": "במכירה",
-        "hebreu_voyelles": "בַּמְּכִירָה",
-        "francais_mot": "dans la vente",
-        "expression_contexte": "lors de la vente"
-      },
-      {
-        "id": 24,
-        "hebreu_brut": "שאין",
-        "hebreu_voyelles": "שֶׁאֵין",
-        "francais_mot": "car il n'y a pas",
-        "expression_contexte": "car... n'est pas"
-      },
-      {
-        "id": 25,
-        "hebreu_brut": "מעשה שבת",
-        "hebreu_voyelles": "מַעֲשֵׂה שַׁבָּת",
-        "francais_mot": "l'action du Chabbat",
-        "expression_contexte": "le profit tiré d'une action accomplie pendant Chabbat (Maassé Chabbat)"
-      },
-      {
-        "id": 26,
-        "hebreu_brut": "באופן כזה",
-        "hebreu_voyelles": "בְּאוֹפֶן כָּזֶה",
-        "francais_mot": "de cette manière",
-        "expression_contexte": "de cette manière"
-      },
-      {
-        "id": 27,
-        "hebreu_brut": "אסורים",
-        "hebreu_voyelles": "אֲסוּרִים",
-        "francais_mot": "interdits",
-        "expression_contexte": "interdit"
-      },
-      {
-        "id": 28,
-        "hebreu_brut": "בהנאה",
-        "hebreu_voyelles": "בַּהֲנָאָה",
-        "francais_mot": "en profit / d'en tirer profit",
-        "expression_contexte": "de tirer profit"
+        "hebreu_brut": "א)",
+        "hebreu_voyelles": "א)",
+        "francais_mot": "(a)",
+        "expression_contexte": "(Note a)"
       }
     ]
   }

@@ -105,7 +105,7 @@ const WelcomeScreen = ({ books, favorites, onSelectBook, onSelectFavorite, onRem
                       <Icon name="trash" className="w-3.5 h-3.5" />
                     </button>
                     <span className="text-[9px] font-bold text-amber-500 uppercase tracking-wider block mb-1">
-                      {fav.bookTitle} • Seïf {fav.paragraphIndex + 1}
+                      {fav.bookTitle} • Seïf {fav.seif || (fav.paragraphIndex + 1)}
                     </span>
                     <p className="text-sm text-zinc-200 font-medium line-clamp-1 mb-1 font-hebrew text-right" dir="rtl">
                       {fav.previewHebrew}
