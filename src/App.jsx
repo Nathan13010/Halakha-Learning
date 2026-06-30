@@ -68,8 +68,29 @@ function App() {
 
       if (parsed.length === 0) throw new Error("JSON mal formé.");
 
-      setParagraphs(parsed);
-      setCurrentParagraphIndex(Math.min(parsed.length - 1, Math.max(0, startIdx)));
+      const normalized = parsed.map(h => {
+        const t = h.texte_integral || h.texteintegral || {};
+        const m = h.mots_alignes || h.motsalignes || [];
+        return {
+          ...h,
+          texte_integral: {
+            hebreu_sans_voyelles: t.hebreu_sans_voyelles || t.hebreusansvoyelles || "",
+            hebreu_avec_voyelles: t.hebreu_avec_voyelles || t.hebreuavecvoyelles || "",
+            francais: t.francais || ""
+          },
+          mots_alignes: m.map(w => ({
+            id: w.id,
+            hebreu_brut: w.hebreu_brut || w.hebreubrut || "",
+            hebreu_voyelles: w.hebreu_voyelles || w.hebreuvoyelles || "",
+            francais_mot: w.francais_mot || w.francaismot || "",
+            expression_contexte: w.expression_contexte || w.expressioncontexte || "",
+            infinitif: w.infinitif || null
+          }))
+        };
+      });
+
+      setParagraphs(normalized);
+      setCurrentParagraphIndex(Math.min(normalized.length - 1, Math.max(0, startIdx)));
       setCurrentScreen("reader");
       triggerToast(isAuto ? "Marque-page automatique restauré !" : `Chargement réussi !`);
     } catch (e) {

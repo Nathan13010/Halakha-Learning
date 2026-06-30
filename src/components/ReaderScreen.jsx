@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import Icon from './Icon';
 
 const ReaderScreen = ({
@@ -42,39 +43,42 @@ const ReaderScreen = ({
         }
       }
     };
+    const handleScroll = () => {
+      if (popup && popup.show) {
+        setPopup(null);
+      }
+    };
     document.addEventListener("mousedown", handleOutsideClick);
-    return () => document.removeEventListener("mousedown", handleOutsideClick);
+    document.addEventListener("touchstart", handleOutsideClick);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+      document.removeEventListener("touchstart", handleOutsideClick);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, [popup]);
 
-  // Handle word selection with instant state reset to fix iOS Safari/Chrome sticky bug
   const handleWordClick = (word, wordId) => {
-    // 1. Clear old state to force unmounting of the popup component
-    setPopup(null);
+    const wordElement = wordRefs.current[wordId];
+    if (!wordElement) return;
 
-    // 2. Re-mount in next tick to ensure smooth, instant update on touch events
-    setTimeout(() => {
-      const wordElement = wordRefs.current[wordId];
-      if (!wordElement || !containerRef.current) return;
+    const wordRect = wordElement.getBoundingClientRect();
+    const popupWidth = 240;
+    const margin = 10;
 
-      const containerRect = containerRef.current.getBoundingClientRect();
-      const wordRect = wordElement.getBoundingClientRect();
+    let left = wordRect.left + wordRect.width / 2;
+    const top = wordRect.top - 6;
 
-      let left = wordRect.left - containerRect.left + wordRect.width / 2;
-      const top = wordRect.top - containerRect.top - 8;
+    const halfWidth = popupWidth / 2;
+    const viewportWidth = window.innerWidth;
+    left = Math.max(halfWidth + margin, Math.min(left, viewportWidth - halfWidth - margin));
 
-      const popupWidth = Math.min(320, containerRect.width * 0.90);
-      const halfWidth = popupWidth / 2;
-      const margin = 12;
-
-      left = Math.max(halfWidth + margin, Math.min(left, containerRect.width - halfWidth - margin));
-
-      setPopup({
-        word,
-        left,
-        top,
-        show: true,
-      });
-    }, 10);
+    setPopup({
+      word,
+      left,
+      top,
+      show: true,
+    });
   };
 
   // Helper to split sentence into prefix punctuation, clean word, and suffix punctuation
@@ -127,7 +131,7 @@ const ReaderScreen = ({
       cleanMots.forEach((cm, mIndex) => {
         let match = false;
         cm.words.forEach(w => {
-          if (w === cleanToken || w.includes(cleanToken) || cleanToken.includes(w)) {
+          if (w === cleanToken) {
             match = true;
           }
         });
@@ -416,59 +420,53 @@ const ReaderScreen = ({
             <div ref={containerRef} className="space-y-8 flex-grow relative pt-2">
               
               {/* CONTENEUR DE POPUP CLAMPÉ QUANT AUX COORDONNÉES DU MOT SELECTIONNÉ */}
-              {popup && popup.show && (
+              {popup && popup.show && createPortal(
                 <div
                   style={{
-                    position: "absolute",
+                    position: "fixed",
                     left: popup.left,
                     top: popup.top,
                     transform: "translate(-50%, -100%)",
                   }}
-                  className="z-40 w-[95%] max-w-[320px] md:w-80 popup-container"
+                  className="z-50 w-fit min-w-[140px] max-w-[240px] md:max-w-[280px] popup-container"
                 >
-                  <div className="bg-zinc-800 border border-amber-500 shadow-2xl rounded-xl p-4 relative mb-3">
-                    <div className="flex justify-between items-start pb-2 mb-2.5 border-b border-zinc-700">
-                      <div className="text-left select-none">
-                        <span className="bg-amber-500 text-black text-[9px] font-bold px-1.5 py-0.5 rounded tracking-wider uppercase">
-                          MOT-À-MOT
-                        </span>
-                        <p className="text-[10px] text-zinc-400 tracking-wider font-mono mt-1">
-                          Réf: #{popup.word.id}
-                        </p>
-                      </div>
-                      <div className="text-right">
-                        <p className="font-hebrew-serif font-extrabold text-right text-amber-500 tracking-wide text-xl md:text-2xl" dir="rtl">
-                          {popup.word.hebreu_voyelles}
-                        </p>
-                      </div>
+                  <div className="bg-zinc-900 border border-amber-500/80 shadow-2xl rounded-lg p-3 relative mb-2 text-zinc-100 font-sans text-xs">
+                    <div className="flex justify-between items-center gap-4 pb-1.5 mb-1.5 border-b border-zinc-800">
+                      <p className="font-hebrew-serif font-bold text-amber-500 text-lg" dir="rtl">
+                        {popup.word.hebreu_voyelles}
+                      </p>
+                      <p className="text-zinc-200 font-medium text-right leading-tight">
+                        {popup.word.francais_mot}
+                      </p>
                     </div>
 
-                    <div className="space-y-3 font-sans text-left">
-                      <div>
-                        <span className="text-[8px] font-bold uppercase tracking-widest text-zinc-500 block mb-0.5">
-                          Traduction française
-                        </span>
-                        <p className="text-sm font-semibold text-zinc-100 italic">
-                          {popup.word.francais_mot || "Traduction non définie"}
-                        </p>
-                      </div>
-                      
-                      <div className="h-[1px] bg-zinc-700 my-2"></div>
-
-                      <div>
-                        <span className="text-[8px] font-bold uppercase tracking-widest text-zinc-500 block mb-0.5">
-                          Contexte d'Étude
-                        </span>
-                        <div className="bg-zinc-900 border border-zinc-700 rounded-lg p-2.5">
-                          <p className="text-xs text-zinc-300 leading-relaxed text-left">
-                            {popup.word.expression_contexte || "Aucune analyse contextuelle complémentaire."}
+                    <div className="space-y-2 text-left">
+                      {popup.word.infinitif && (
+                        <div>
+                          <span className="text-[8px] font-bold uppercase tracking-widest text-amber-500/60 block">
+                            Infinitif
+                          </span>
+                          <p className="text-zinc-300 font-serif italic">
+                            {popup.word.infinitif}
                           </p>
                         </div>
-                      </div>
+                      )}
+
+                      {popup.word.expression_contexte && popup.word.expression_contexte !== popup.word.francais_mot && (
+                        <div>
+                          <span className="text-[8px] font-bold uppercase tracking-widest text-zinc-500 block">
+                            Contexte
+                          </span>
+                          <p className="text-[11px] text-zinc-400 leading-normal">
+                            {popup.word.expression_contexte}
+                          </p>
+                        </div>
+                      )}
                     </div>
-                    <div className="absolute h-3 w-3 bg-zinc-800 border-r border-b border-amber-500 left-1/2 -bottom-1.5 -translate-x-1/2 rotate-45" />
+                    <div className="absolute h-2 w-2 bg-zinc-900 border-r border-b border-amber-500/80 left-1/2 -bottom-1 -translate-x-1/2 rotate-45" />
                   </div>
-                </div>
+                </div>,
+                document.body
               )}
 
               {/* RENDU EN FONCTION DU MODE D'ÉTUDE CHOISI */}
@@ -484,7 +482,7 @@ const ReaderScreen = ({
                         ref={el => { if (el) wordRefs.current[wordId] = el; }}
                         onMouseEnter={() => setHoveredWordId(word.id)}
                         onMouseLeave={() => setHoveredWordId(null)}
-                        onPointerDown={() => handleWordClick(word, wordId)}
+                        onPointerDown={(e) => { e.preventDefault(); handleWordClick(word, wordId); }}
                         className={`clickable-word inline-block px-1.5 py-0.5 mx-0.5 rounded cursor-pointer transition-colors border-b-2 ${isHovered ? 'text-amber-500 bg-amber-500/10 border-amber-500' : isKeyMatched ? 'bg-amber-500/20 text-yellow-200 border-amber-500/50' : 'text-zinc-100 hover:bg-amber-500/10 border-transparent'}`}
                       >
                         {word.hebreu_brut}
@@ -506,7 +504,7 @@ const ReaderScreen = ({
                         ref={el => { if (el) wordRefs.current[wordId] = el; }}
                         onMouseEnter={() => setHoveredWordId(word.id)}
                         onMouseLeave={() => setHoveredWordId(null)}
-                        onPointerDown={() => handleWordClick(word, wordId)}
+                        onPointerDown={(e) => { e.preventDefault(); handleWordClick(word, wordId); }}
                         className={`clickable-word inline-block px-1.5 py-0.5 mx-0.5 rounded cursor-pointer transition-colors border-b-2 ${isHovered ? 'text-amber-500 bg-amber-500/10 border-amber-500' : isKeyMatched ? 'bg-amber-500/20 text-yellow-200 border-amber-500/50' : 'text-zinc-100 hover:bg-amber-500/10 border-transparent'}`}
                       >
                         {word.hebreu_voyelles}
@@ -561,72 +559,7 @@ const ReaderScreen = ({
                 </div>
               )}
 
-              {/* RÉSUMÉ PÉDAGOGIQUE */}
-              {currentParagraph.resume_pedagogique && (readingMode === 3 || readingMode === 4) && (
-                <div className="pt-6 mt-6 border-t border-zinc-800/80 space-y-4">
-                  <div className="flex items-center gap-1.5 text-zinc-400 mb-2">
-                    <Icon name="cap" className="w-4 h-4 text-amber-500" />
-                    <span className="text-[10px] font-bold uppercase tracking-widest">Résumé Pédagogique</span>
-                  </div>
-                  
-                  {currentParagraph.resume_pedagogique.sens_general && (
-                    <div className="border-l-4 border-amber-500 bg-amber-500/5 p-4 rounded-r-xl">
-                      <h4 className="text-xs font-bold text-amber-400 mb-1 font-serif">Sens Général</h4>
-                      <p className="text-xs text-zinc-300 leading-relaxed font-sans">{currentParagraph.resume_pedagogique.sens_general}</p>
-                    </div>
-                  )}
 
-                  {currentParagraph.resume_pedagogique.cas_concret && (
-                    <div className="border-l-4 border-blue-500 bg-blue-500/5 p-4 rounded-r-xl">
-                      <h4 className="text-xs font-bold text-blue-400 mb-1 font-serif">Cas Concret</h4>
-                      <p className="text-xs text-zinc-300 leading-relaxed font-sans">
-                        {currentParagraph.resume_pedagogique.cas_concret}
-                      </p>
-                    </div>
-                  )}
-
-                  {currentParagraph.resume_pedagogique.en_pratique && (
-                    <div className="border-l-4 border-emerald-500 bg-emerald-500/5 p-4 rounded-r-xl">
-                      <h4 className="text-xs font-bold text-emerald-400 mb-1 font-serif">En Pratique</h4>
-                      <p className="text-xs text-zinc-300 leading-relaxed font-sans">{currentParagraph.resume_pedagogique.en_pratique}</p>
-                    </div>
-                  )}
-                </div>
-              )}
-
-              {/* COMMENTAIRES OFFICIELS */}
-              {currentParagraph.commentaires_officiels && currentParagraph.commentaires_officiels.length > 0 && (
-                <div className="pt-4 mt-4 border-t border-zinc-800/80">
-                  <button 
-                    onPointerDown={() => setShowCommentaires(!showCommentaires)}
-                    className="flex items-center justify-between w-full text-left py-2 text-zinc-400 hover:text-zinc-200 transition-colors cursor-pointer select-none"
-                  >
-                    <div className="flex items-center gap-1.5">
-                      <Icon name="library" className="w-4 h-4 text-amber-500" />
-                      <span className="text-[10px] font-bold uppercase tracking-widest">Commentaires Officiels ({currentParagraph.commentaires_officiels.length})</span>
-                    </div>
-                    <span className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest font-mono">
-                      {showCommentaires ? "Masquer ▲" : "Afficher ▼"}
-                    </span>
-                  </button>
-                  
-                  {showCommentaires && (
-                    <div className="mt-4 space-y-4 max-h-96 overflow-y-auto pr-2">
-                      {currentParagraph.commentaires_officiels.map((comm, idx) => (
-                        <div key={idx} className="bg-zinc-900/30 border border-zinc-850 p-4 rounded-xl space-y-2">
-                          <p className="font-hebrew-serif text-right text-amber-200 leading-relaxed text-sm md:text-base" dir="rtl">
-                            {comm.hebreu_brut}
-                          </p>
-                          <div className="h-[1px] bg-zinc-800/50 my-1"></div>
-                          <p className="text-xs text-zinc-400 italic leading-relaxed font-sans">
-                            {comm.francais}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              )}
 
 
 
