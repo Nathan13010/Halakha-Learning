@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="fr" class="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="no-referrer">
     <title>Mishné Mikra — Édition Interactive Bilingue</title>
-    
+
     <!-- Google Fonts: Inter et polices d'affichage de prestige -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Noto+Serif+Hebrew:wght@600;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Noto+Serif+Hebrew:wght@600;900&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+
     <!-- Script d'injection Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -28,7 +31,7 @@
             }
         }
     </script>
-    
+
     <!-- React & Babel Standalone CDNs -->
     <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
@@ -41,23 +44,28 @@
             font-size: 1.15em;
             line-height: 1.8;
         }
+
         /* Custom scrollbar pour l'aspect vieux manuscrit moderne micro-stylisé */
         ::-webkit-scrollbar {
             width: 6px;
             height: 6px;
         }
+
         ::-webkit-scrollbar-track {
             background: #0A0A0B;
         }
+
         ::-webkit-scrollbar-thumb {
             background: #27272A;
             border-radius: 3px;
         }
+
         ::-webkit-scrollbar-thumb:hover {
             background: #D97706;
         }
     </style>
 </head>
+
 <body class="bg-[#0A0A0B] text-[#E4E4E7] antialiased">
 
     <!-- Point d'ancrage de notre application React -->
@@ -419,9 +427,9 @@
                     const inHebrew = hb.includes(query) || h_avec.includes(query);
                     const inFrench = fr.includes(query);
                     const inWords = p.mots_alignes.some(
-                        w => w.hebreu_brut.toLowerCase().includes(query) || 
-                             w.francais_mot.toLowerCase().includes(query) ||
-                             w.expression_contexte.toLowerCase().includes(query)
+                        w => w.hebreu_brut.toLowerCase().includes(query) ||
+                            w.francais_mot.toLowerCase().includes(query) ||
+                            w.expression_contexte.toLowerCase().includes(query)
                     );
                     return { index: idx, matches: inHebrew || inFrench || inWords, paragraph: p };
                 }).filter(item => item.matches);
@@ -435,7 +443,7 @@
                 const parts = text.split(regex);
                 return (
                     <span>
-                        {parts.map((part, i) => 
+                        {parts.map((part, i) =>
                             part.toLowerCase() === query.toLowerCase() ? (
                                 <mark key={i} className="bg-amber-400/35 text-zinc-100 px-0.5 rounded font-bold underline decoration-amber-500">
                                     {part}
@@ -499,9 +507,8 @@
 
                                 <button
                                     onClick={() => onToggleFavorite(currentParagraphIndex)}
-                                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-xs font-semibold cursor-pointer transition-all ${
-                                        isFavorite ? "bg-amber-500/10 border-amber-500/50 text-amber-500 shadow-md" : "bg-zinc-800 border-zinc-700/80 text-zinc-400 hover:text-zinc-200 hover:bg-zinc-700"
-                                    }`}
+                                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-xs font-semibold cursor-pointer transition-all ${isFavorite ? "bg-amber-500/10 border-amber-500/50 text-amber-500 shadow-md" : "bg-zinc-800 border-zinc-700/80 text-zinc-400 hover:text-zinc-200 hover:bg-zinc-700"
+                                        }`}
                                 >
                                     <Icon name="star" className={`w-3.5 h-3.5 ${isFavorite ? "text-amber-500 fill-amber-500" : ""}`} />
                                     <span className="hidden sm:inline">{isFavorite ? "Favori" : "Sauvegarder"}</span>
@@ -631,7 +638,7 @@
                                 </div>
                             ) : (
                                 <div ref={containerRef} className="space-y-8 flex-grow relative pt-2">
-                                    
+
                                     {/* CONTENEUR DE POPUP CLAMPÉ QUANT AUX COORDONNÉES DU MOT SELECTIONNÉ */}
                                     {popup && popup.show && (
                                         <div
@@ -669,7 +676,7 @@
                                                             {popup.word.francais_mot || "Traduction non définie"}
                                                         </p>
                                                     </div>
-                                                    
+
                                                     <div className="h-[1px] bg-zinc-700 my-2"></div>
 
                                                     <div>
@@ -868,7 +875,7 @@
                             handleLoadBook(savedBook, paragraphIndex, true);
                         }
                     } catch (e) {
-                         console.error(e);
+                        console.error(e);
                     }
                 }
             }, []);
@@ -1032,4 +1039,5 @@
         root.render(<App />);
     </script>
 </body>
+
 </html>
